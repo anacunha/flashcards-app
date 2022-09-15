@@ -53,3 +53,25 @@ Run `amplify push` to provision the authentication resources in the cloud:
 ```shell
 amplify push
 ```
+
+Install the [Amplify UI library](https://ui.docs.amplify.aws/):
+
+```shell
+npm install @aws-amplify/ui-react
+```
+
+Configure the [Authenticator component](https://ui.docs.amplify.aws/react/connected-components/authenticator) on `src/App.js`:
+
+```javascript
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+function App() {
+  return (
+    <div className="App">
+    </div>
+  );
+}
+
+export default withAuthenticator(App);
+```
