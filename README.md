@@ -124,3 +124,22 @@ amplify push
 es
 ? <b>Enter maximum statement depth [increase from default if your schema is deeply nested]</b> 2
 </pre>
+
+### Schema
+
+```graphql
+type Card @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  front: String!
+  back: String!
+  deckId: ID! @index(name: "byDeck")
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
+}
+
+type Deck @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  name: String!
+  cards: [Card!] @hasMany(indexName: "byDeck", fields: ["id"])
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
+}
+```
