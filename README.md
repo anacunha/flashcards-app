@@ -97,3 +97,5 @@ Use a Cognito user pool configured as a part of this project.
 </pre>
 
 https://docs.amplify.aws/cli/graphql/authorization-rules/
+https://docs.amplify.aws/lib/datastore/getting-started/q/platform/js/
+https://docs.amplify.aws/lib/datastore/setup-auth-rules/q/platform/js/
