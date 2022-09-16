@@ -75,3 +75,11 @@ function App() {
 
 export default withAuthenticator(App);
 ```
+
+## API (GraphQL)
+
+```shell
+amplify add api
+```
+
+https://docs.amplify.aws/cli/graphql/authorization-rules/
