@@ -82,4 +82,18 @@ export default withAuthenticator(App);
 amplify add api
 ```
 
+<pre>
+? <b>Select from one of the below mentioned services:</b> GraphQL
+? <b>Here is the GraphQL API that we will create. Select a setting to edit or continue</b> Authorization modes
+? <b>Choose the default authorization type for the API</b> Amazon Cognito User Pool
+Use a Cognito user pool configured as a part of this project.
+? <b>Configure additional auth types?</b> No
+? <b>Here is the GraphQL API that we will create. Select a setting to edit or continue</b> Conflict detection
+? <b>Enable conflict detection?</b> Yes
+? <b>Select the default resolution strategy</b> Auto Merge
+? <b>Here is the GraphQL API that we will create. Select a setting to edit or continue</b> Continue
+? <b>Choose a schema template:</b> Objects with fine-grained access control (e.g., a project management app with
+ owner-based authorization)
+</pre>
+
 https://docs.amplify.aws/cli/graphql/authorization-rules/
