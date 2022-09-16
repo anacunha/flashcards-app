@@ -99,3 +99,28 @@ Use a Cognito user pool configured as a part of this project.
 https://docs.amplify.aws/cli/graphql/authorization-rules/
 https://docs.amplify.aws/lib/datastore/getting-started/q/platform/js/
 https://docs.amplify.aws/lib/datastore/setup-auth-rules/q/platform/js/
+
+https://docs.amplify.aws/cli/graphql/authorization-rules/#per-user--owner-based-data-access
+https://docs.amplify.aws/cli/graphql/authorization-rules/#field-level-authorization-rules
+
+```shell
+amplify push
+```
+
+<pre>
+┌──────────┬────────────────────┬───────────┬───────────────────┐
+│ Category │ Resource name      │ Operation │ Provider plugin   │
+├──────────┼────────────────────┼───────────┼───────────────────┤
+│ Api      │ flashcards         │ Create    │ awscloudformation │
+├──────────┼────────────────────┼───────────┼───────────────────┤
+│ Auth     │ flashcards23904dd8 │ No Change │ awscloudformation │
+└──────────┴────────────────────┴───────────┴───────────────────┘
+? <b>Are you sure you want to continue?</b> Yes
+
+? <b>Do you want to generate code for your newly created GraphQL API</b> Yes
+? <b>Choose the code generation language target</b> javascript
+? <b>Enter the file name pattern of graphql queries, mutations and subscriptions</b> src/graphql/**/*.js
+? <b>Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptions</b> Y
+es
+? <b>Enter maximum statement depth [increase from default if your schema is deeply nested]</b> 2
+</pre>
