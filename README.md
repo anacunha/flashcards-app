@@ -143,3 +143,7 @@ type Deck @model @auth(rules: [{allow: owner}]) {
   owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
 }
 ```
+
+## UI Components
+
+https://docs.amplify.aws/console/uibuilder/eventhandling/#bind-ui-to-create-update-or-delete-a-data-record
