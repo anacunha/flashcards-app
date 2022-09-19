@@ -1,70 +1,149 @@
-# Getting Started with Create React App
+# Flashcards Amplify App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Amplify CLI
 
-## Available Scripts
+Install and configure the [Amplify CLI](https://docs.amplify.aws/cli/) by following the instructions [here](https://docs.amplify.aws/cli/start/install/).
 
-In the project directory, you can run:
+## Setup project
 
-### `npm start`
+Create a new [React](https://reactjs.org/) project:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```shell
+npx create-react-app@latest flashcards
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Initialize Amplify from the project root folder to create a cloud project in the [Amplify Console](https://console.aws.amazon.com/amplify):
 
-### `npm test`
+```shell
+amplify init
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install the [AWS Amplify library](https://github.com/aws-amplify/amplify-js):
 
-### `npm run build`
+```shell
+npm install aws-amplify
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Configure Amplify on our frontend app `src/index.js` file so we can use it to interact with our backend services:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```javascript
+import { Amplify } from 'aws-amplify';
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Authentication
 
-### `npm run eject`
+Amplify uses [Amazon Cognito](https://aws.amazon.com/cognito/) as the default authentication provider for our applications.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```shell
+amplify add auth
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Use the default configuration:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<pre>
+? <b>Do you want to use the default authentication and security configuration?</b> Default configuration
+? <b>How do you want users to be able to sign in?</b> Username
+? <b>Do you want to configure advanced settings?</b> No, I am done.
+</pre>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Run `amplify push` to provision the authentication resources in the cloud:
 
-## Learn More
+```shell
+amplify push
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Install the [Amplify UI library](https://ui.docs.amplify.aws/):
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```shell
+npm install @aws-amplify/ui-react
+```
 
-### Code Splitting
+Configure the [Authenticator component](https://ui.docs.amplify.aws/react/connected-components/authenticator) on `src/App.js`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```javascript
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 
-### Analyzing the Bundle Size
+function App() {
+  return (
+    <div className="App">
+    </div>
+  );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+export default withAuthenticator(App);
+```
 
-### Making a Progressive Web App
+## API (GraphQL)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```shell
+amplify add api
+```
 
-### Advanced Configuration
+<pre>
+? <b>Select from one of the below mentioned services:</b> GraphQL
+? <b>Here is the GraphQL API that we will create. Select a setting to edit or continue</b> Authorization modes
+? <b>Choose the default authorization type for the API</b> Amazon Cognito User Pool
+Use a Cognito user pool configured as a part of this project.
+? <b>Configure additional auth types?</b> No
+? <b>Here is the GraphQL API that we will create. Select a setting to edit or continue</b> Conflict detection
+? <b>Enable conflict detection?</b> Yes
+? <b>Select the default resolution strategy</b> Auto Merge
+? <b>Here is the GraphQL API that we will create. Select a setting to edit or continue</b> Continue
+? <b>Choose a schema template:</b> Objects with fine-grained access control (e.g., a project management app with
+ owner-based authorization)
+</pre>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+https://docs.amplify.aws/cli/graphql/authorization-rules/
+https://docs.amplify.aws/lib/datastore/getting-started/q/platform/js/
+https://docs.amplify.aws/lib/datastore/setup-auth-rules/q/platform/js/
 
-### Deployment
+https://docs.amplify.aws/cli/graphql/authorization-rules/#per-user--owner-based-data-access
+https://docs.amplify.aws/cli/graphql/authorization-rules/#field-level-authorization-rules
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```shell
+amplify push
+```
 
-### `npm run build` fails to minify
+<pre>
+┌──────────┬────────────────────┬───────────┬───────────────────┐
+│ Category │ Resource name      │ Operation │ Provider plugin   │
+├──────────┼────────────────────┼───────────┼───────────────────┤
+│ Api      │ flashcards         │ Create    │ awscloudformation │
+├──────────┼────────────────────┼───────────┼───────────────────┤
+│ Auth     │ flashcards23904dd8 │ No Change │ awscloudformation │
+└──────────┴────────────────────┴───────────┴───────────────────┘
+? <b>Are you sure you want to continue?</b> Yes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+? <b>Do you want to generate code for your newly created GraphQL API</b> Yes
+? <b>Choose the code generation language target</b> javascript
+? <b>Enter the file name pattern of graphql queries, mutations and subscriptions</b> src/graphql/**/*.js
+? <b>Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptions</b> Y
+es
+? <b>Enter maximum statement depth [increase from default if your schema is deeply nested]</b> 2
+</pre>
+
+### Schema
+
+```graphql
+type Card @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  front: String!
+  back: String!
+  deckId: ID! @index(name: "byDeck")
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
+}
+
+type Deck @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  name: String!
+  cards: [Card!] @hasMany(indexName: "byDeck", fields: ["id"])
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
+}
+```
+
+## UI Components
+
+https://docs.amplify.aws/console/uibuilder/eventhandling/#bind-ui-to-create-update-or-delete-a-data-record
