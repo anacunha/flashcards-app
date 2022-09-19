@@ -44,7 +44,7 @@ Use the default configuration:
 
 <pre>
 ? <b>Do you want to use the default authentication and security configuration?</b> Default configuration
-? <b>How do you want users to be able to sign in?</b> Username
+? <b>How do you want users to be able to sign in?</b> Email
 ? <b>Do you want to configure advanced settings?</b> No, I am done.
 </pre>
 
@@ -96,6 +96,25 @@ Use a Cognito user pool configured as a part of this project.
  owner-based authorization)
 </pre>
 
+### Schema
+
+```graphql
+type Card @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  front: String!
+  back: String!
+  deckId: ID! @index(name: "byDeck")
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
+}
+
+type Deck @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  name: String!
+  cards: [Card!] @hasMany(indexName: "byDeck", fields: ["id"])
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
+}
+```
+
 https://docs.amplify.aws/cli/graphql/authorization-rules/
 https://docs.amplify.aws/lib/datastore/getting-started/q/platform/js/
 https://docs.amplify.aws/lib/datastore/setup-auth-rules/q/platform/js/
@@ -124,25 +143,6 @@ amplify push
 es
 ? <b>Enter maximum statement depth [increase from default if your schema is deeply nested]</b> 2
 </pre>
-
-### Schema
-
-```graphql
-type Card @model @auth(rules: [{allow: owner}]) {
-  id: ID!
-  front: String!
-  back: String!
-  deckId: ID! @index(name: "byDeck")
-  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
-}
-
-type Deck @model @auth(rules: [{allow: owner}]) {
-  id: ID!
-  name: String!
-  cards: [Card!] @hasMany(indexName: "byDeck", fields: ["id"])
-  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
-}
-```
 
 ## UI Components
 
