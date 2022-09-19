@@ -10,6 +10,11 @@
       "StackName": "amplify-reinvent-staging-205946",
       "StackId": "arn:aws:cloudformation:us-west-2:247583747835:stack/amplify-reinvent-staging-205946/fe51ef90-385d-11ed-8c4f-069fe44141b9",
       "AmplifyAppId": "d3h56lncyjezc9"
+    },
+    "categories": {
+      "auth": {
+        "reinvent12a05cc9": {}
+      }
     }
   }
 }
