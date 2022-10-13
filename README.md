@@ -4,7 +4,7 @@
 
 Install and configure the [Amplify CLI](https://docs.amplify.aws/cli/) by following the instructions [here](https://docs.amplify.aws/cli/start/install/).
 
-## Set up project
+## [Set up project](https://docs.amplify.aws/lib/project-setup/create-application/q/platform/js/)
 
 Create a new [React](https://reactjs.org/) project:
 
@@ -146,4 +146,10 @@ es
 
 ## UI Components
 
-https://docs.amplify.aws/console/uibuilder/eventhandling/#bind-ui-to-create-update-or-delete-a-data-record
+To use the [Amplify UI development integration with Figma](https://docs.amplify.aws/console/uibuilder/figmatocode/), enable Amplify Studio under your application settings on the [Amplify Console](https://console.aws.amazon.com/amplify/home):
+
+![Enable Amplify Studio under App settings: Amplify Studio settings](https://user-images.githubusercontent.com/1771610/195656669-ff59ba1f-1b6b-440d-903b-45fcea508a8c.png)
+
+## Resources
+
+- https://docs.amplify.aws/console/uibuilder/eventhandling/#bind-ui-to-create-update-or-delete-a-data-record
