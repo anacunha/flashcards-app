@@ -46,7 +46,11 @@
               "userPoolId": "authflashcardsb4c37c28"
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
         }
       }
     }
