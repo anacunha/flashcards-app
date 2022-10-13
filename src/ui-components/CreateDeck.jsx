@@ -87,7 +87,7 @@ export default function CreateDeck(props) {
           isDisabled={false}
           variation="primary"
           children="Create"
-          {...getOverrideProps(overrides, "Create Button")}
+          {...getOverrideProps(overrides, "CreateButton")}
         ></Button>
       </Flex>
     </Flex>

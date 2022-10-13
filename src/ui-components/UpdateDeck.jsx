@@ -87,7 +87,7 @@ export default function UpdateDeck(props) {
           isDisabled={false}
           variation="primary"
           children="Update"
-          {...getOverrideProps(overrides, "Update Button")}
+          {...getOverrideProps(overrides, "UpdateButton")}
         ></Button>
       </Flex>
     </Flex>
