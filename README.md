@@ -4,7 +4,7 @@
 
 Install and configure the [Amplify CLI](https://docs.amplify.aws/cli/) by following the instructions [here](https://docs.amplify.aws/cli/start/install/).
 
-## Setup project
+## Set up project
 
 Create a new [React](https://reactjs.org/) project:
 
@@ -78,9 +78,15 @@ export default withAuthenticator(App);
 
 ## [API (GraphQL)](https://docs.amplify.aws/lib/graphqlapi/getting-started/q/platform/js/)
 
+Amplify will use [AWS AppSync](https://aws.amazon.com/appsync/) and [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) to power our GraphQL API:
+
 ```shell
 amplify add api
 ```
+
+- Select `Amazon Cognito User Pool` as our API [authorization type](https://docs.amplify.aws/cli/graphql/authorization-rules/).
+- Enable [Conflict resolution](https://docs.amplify.aws/lib/datastore/conflict/q/platform/js/) with `Auto Merge` strategy.
+- Start off with a `Blank Schema`.
 
 <pre>
 ? <b>Select from one of the below mentioned services:</b> GraphQL
@@ -95,7 +101,12 @@ Use a Cognito user pool configured as a part of this project.
 ? <b>Choose a schema template:</b> Blank Schema
 </pre>
 
-### Schema
+### [Data modeling](https://docs.amplify.aws/cli/graphql/data-modeling/)
+
+Update the GraphQL schema file `amplify/backend/api/flashcards/schema.graphql` to configure our application's data model . Amplify will create [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) tables for each of our models annotated with `@model`.
+
+- Only the `owner` of a record will be able to access and modify it. To do that, we will use the `@auth` directive to configure [owner-based data access](https://docs.amplify.aws/cli/graphql/authorization-rules/#per-user--owner-based-data-access).
+- To prevent an owner from reassigning their record to another user, we will set up [field-level authorization rules](https://docs.amplify.aws/cli/graphql/authorization-rules/#field-level-authorization-rules) to protect the `owner` field.
 
 ```graphql
 type Card @model @auth(rules: [{allow: owner}]) {
@@ -114,18 +125,15 @@ type Deck @model @auth(rules: [{allow: owner}]) {
 }
 ```
 
+Run `amplify push` to deploy the GraphQL API resources in the cloud:
+
 ```shell
 amplify push
 ```
 
+We will continue deployment with the default configuration:
+
 <pre>
-┌──────────┬────────────────────┬───────────┬───────────────────┐
-│ Category │ Resource name      │ Operation │ Provider plugin   │
-├──────────┼────────────────────┼───────────┼───────────────────┤
-│ Api      │ flashcards         │ Create    │ awscloudformation │
-├──────────┼────────────────────┼───────────┼───────────────────┤
-│ Auth     │ flashcards23904dd8 │ No Change │ awscloudformation │
-└──────────┴────────────────────┴───────────┴───────────────────┘
 ? <b>Are you sure you want to continue?</b> Yes
 
 ? <b>Do you want to generate code for your newly created GraphQL API</b> Yes
@@ -135,13 +143,6 @@ amplify push
 es
 ? <b>Enter maximum statement depth [increase from default if your schema is deeply nested]</b> 2
 </pre>
-
-https://docs.amplify.aws/cli/graphql/authorization-rules/
-https://docs.amplify.aws/lib/datastore/getting-started/q/platform/js/
-https://docs.amplify.aws/lib/datastore/setup-auth-rules/q/platform/js/
-
-https://docs.amplify.aws/cli/graphql/authorization-rules/#per-user--owner-based-data-access
-https://docs.amplify.aws/cli/graphql/authorization-rules/#field-level-authorization-rules
 
 ## UI Components
 
