@@ -28,11 +28,11 @@ Configure Amplify on our frontend app `src/index.js` file so we can use it to in
 
 ```javascript
 import { Amplify } from 'aws-amplify';
-import awsExports from './aws-exports';
-Amplify.configure(awsExports);
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
 ```
 
-## Authentication
+## [Authentication](https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/)
 
 Amplify uses [Amazon Cognito](https://aws.amazon.com/cognito/) as the default authentication provider for our applications.
 
@@ -76,7 +76,7 @@ function App() {
 export default withAuthenticator(App);
 ```
 
-## API (GraphQL)
+## [API (GraphQL)](https://docs.amplify.aws/lib/graphqlapi/getting-started/q/platform/js/)
 
 ```shell
 amplify add api
@@ -92,16 +92,27 @@ Use a Cognito user pool configured as a part of this project.
 ? <b>Enable conflict detection?</b> Yes
 ? <b>Select the default resolution strategy</b> Auto Merge
 ? <b>Here is the GraphQL API that we will create. Select a setting to edit or continue</b> Continue
-? <b>Choose a schema template:</b> Objects with fine-grained access control (e.g., a project management app with
- owner-based authorization)
+? <b>Choose a schema template:</b> Blank Schema
 </pre>
 
-https://docs.amplify.aws/cli/graphql/authorization-rules/
-https://docs.amplify.aws/lib/datastore/getting-started/q/platform/js/
-https://docs.amplify.aws/lib/datastore/setup-auth-rules/q/platform/js/
+### Schema
 
-https://docs.amplify.aws/cli/graphql/authorization-rules/#per-user--owner-based-data-access
-https://docs.amplify.aws/cli/graphql/authorization-rules/#field-level-authorization-rules
+```graphql
+type Card @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  front: String!
+  back: String!
+  deckID: ID! @index(name: "byDeck")
+  owner: String @auth(rules: [{allow: owner, operations: [read, delete]}])
+}
+
+type Deck @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  name: String!
+  cards: [Card!] @hasMany(indexName: "byDeck", fields: ["id"])
+  owner: String @auth(rules: [{allow: owner, operations: [read, delete]}])
+}
+```
 
 ```shell
 amplify push
@@ -125,24 +136,12 @@ es
 ? <b>Enter maximum statement depth [increase from default if your schema is deeply nested]</b> 2
 </pre>
 
-### Schema
+https://docs.amplify.aws/cli/graphql/authorization-rules/
+https://docs.amplify.aws/lib/datastore/getting-started/q/platform/js/
+https://docs.amplify.aws/lib/datastore/setup-auth-rules/q/platform/js/
 
-```graphql
-type Card @model @auth(rules: [{allow: owner}]) {
-  id: ID!
-  front: String!
-  back: String!
-  deckId: ID! @index(name: "byDeck")
-  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
-}
-
-type Deck @model @auth(rules: [{allow: owner}]) {
-  id: ID!
-  name: String!
-  cards: [Card!] @hasMany(indexName: "byDeck", fields: ["id"])
-  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
-}
-```
+https://docs.amplify.aws/cli/graphql/authorization-rules/#per-user--owner-based-data-access
+https://docs.amplify.aws/cli/graphql/authorization-rules/#field-level-authorization-rules
 
 ## UI Components
 
