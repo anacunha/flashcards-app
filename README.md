@@ -102,7 +102,7 @@ type Card @model @auth(rules: [{allow: owner}]) {
   id: ID!
   front: String!
   back: String!
-  deckID: ID! @index(name: "byDeck")
+  deckId: ID! @index(name: "byDeck")
   owner: String @auth(rules: [{allow: owner, operations: [read, delete]}])
 }
 
