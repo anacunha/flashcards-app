@@ -150,6 +150,12 @@ To use the [Amplify UI development integration with Figma](https://docs.amplify.
 
 ![Enable Amplify Studio under App settings: Amplify Studio settings](https://user-images.githubusercontent.com/1771610/195656669-ff59ba1f-1b6b-440d-903b-45fcea508a8c.png)
 
+```shell
+amplify pull
+```
+
+Your components will be on the `src/ui-components/` folder.
+
 ## Resources
 
 - https://docs.amplify.aws/console/uibuilder/eventhandling/#bind-ui-to-create-update-or-delete-a-data-record
