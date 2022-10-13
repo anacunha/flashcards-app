@@ -6,10 +6,20 @@
 
 /* eslint-disable */
 import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useDataStoreDeleteAction,
+} from "@aws-amplify/ui-react/internal";
+import { Deck } from "../models";
+import { schema } from "../models/schema";
 import { Button, Flex, Heading, Text } from "@aws-amplify/ui-react";
-export default function Deck(props) {
-  const { overrides, ...rest } = props;
+export default function DeckCard(props) {
+  const { deck, overrides, ...rest } = props;
+  const deleteOnClick = useDataStoreDeleteAction({
+    id: deck?.id,
+    model: Deck,
+    schema: schema,
+  });
   return (
     <Flex
       gap="16px"
@@ -20,7 +30,7 @@ export default function Deck(props) {
       padding="39px 39px 39px 39px"
       backgroundColor="rgba(255,255,255,1)"
       {...rest}
-      {...getOverrideProps(overrides, "Deck")}
+      {...getOverrideProps(overrides, "DeckCard")}
     >
       <Flex
         gap="24px"
@@ -41,7 +51,7 @@ export default function Deck(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           level="4"
-          children="Deck Name"
+          children={deck?.name}
           {...getOverrideProps(overrides, "Name")}
         ></Heading>
         <Text
@@ -105,6 +115,9 @@ export default function Deck(props) {
           isDisabled={false}
           variation="default"
           children="Delete"
+          onClick={() => {
+            deleteOnClick();
+          }}
           {...getOverrideProps(overrides, "Delete")}
         ></Button>
       </Flex>

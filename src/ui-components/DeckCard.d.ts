@@ -6,8 +6,11 @@
 
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
+import { Deck } from "../models";
 import { FlexProps } from "@aws-amplify/ui-react";
-export declare type DeckProps = React.PropsWithChildren<Partial<FlexProps> & {
+export declare type DeckCardProps = React.PropsWithChildren<Partial<FlexProps> & {
+    deck?: Deck;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function Deck(props: DeckProps): React.ReactElement;
+export default function DeckCard(props: DeckCardProps): React.ReactElement;

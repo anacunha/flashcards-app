@@ -26,7 +26,7 @@ export { default as StandardCard } from "./StandardCard";
 export { default as Features4x1 } from "./Features4x1";
 export { default as HeroLayout1 } from "./HeroLayout1";
 export { default as ProductCard } from "./ProductCard";
-export { default as Deck } from "./Deck";
+export { default as DeckCard } from "./DeckCard";
 export { default as SideBar } from "./SideBar";
 export { default as HeroLayout2 } from "./HeroLayout2";
 export { default as Ampligram } from "./Ampligram";
