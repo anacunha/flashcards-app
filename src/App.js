@@ -1,15 +1,18 @@
-import { DeckCardCollection, NavBar, UpdateDeck } from './ui-components';
+import { CreateDeck, DeckCardCollection, NavBar, UpdateDeck } from './ui-components';
 import { Flex, View, withAuthenticator } from "@aws-amplify/ui-react";
 import '@aws-amplify/ui-react/styles.css';
 import { useState } from 'react';
 
 function App() {
+  const [showCreateDeckForm, setShowCreateDeckForm] = useState(false);
   const [showUpdateDeckForm, setShowUpdateDeckForm] = useState(false);
   const [deck, setDeck] = useState();
 
   return (
     <div className="App">
-      <NavBar width='100vw' />
+      <NavBar width='100vw' overrides={{
+        CreateDeckButton: { onClick: () => setShowCreateDeckForm(true) }
+      }} />
       <Flex
         direction="row"
         justifyContent="center"
@@ -34,7 +37,14 @@ function App() {
             <UpdateDeck deck={deck} overrides={{
               Close: { onClick: () => setShowUpdateDeckForm(false) }
             }} />
-            : ''}
+            : ''
+          }
+          {showCreateDeckForm ?
+            <CreateDeck overrides={{
+              Close: { onClick: () => setShowCreateDeckForm(false) }
+            }} />
+            : ''
+          }
         </View>
       </Flex>
     </div>

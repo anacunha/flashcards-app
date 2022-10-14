@@ -6,10 +6,23 @@
 
 /* eslint-disable */
 import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useDataStoreCreateAction,
+  useStateMutationAction,
+} from "@aws-amplify/ui-react/internal";
+import { Deck } from "../models";
+import { schema } from "../models/schema";
 import { Button, Flex, Heading, TextField } from "@aws-amplify/ui-react";
+import MyIcon from "./MyIcon";
 export default function CreateDeck(props) {
   const { overrides, ...rest } = props;
+  const [nameValue, setNameValue] = useStateMutationAction("");
+  const createButtonOnClick = useDataStoreCreateAction({
+    fields: { name: nameValue, cards: "[]" },
+    model: Deck,
+    schema: schema,
+  });
   return (
     <Flex
       gap="16px"
@@ -72,6 +85,10 @@ export default function CreateDeck(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={nameValue}
+            onChange={(event) => {
+              setNameValue(event.target.value);
+            }}
             {...getOverrideProps(overrides, "Name")}
           ></TextField>
         </Flex>
@@ -87,9 +104,22 @@ export default function CreateDeck(props) {
           isDisabled={false}
           variation="primary"
           children="Create"
+          onClick={() => {
+            createButtonOnClick();
+          }}
           {...getOverrideProps(overrides, "CreateButton")}
         ></Button>
       </Flex>
+      <MyIcon
+        width="24px"
+        height="24px"
+        shrink="0"
+        overflow="hidden"
+        position="relative"
+        padding="0px 0px 0px 0px"
+        type="close"
+        {...getOverrideProps(overrides, "Close")}
+      ></MyIcon>
     </Flex>
   );
 }
