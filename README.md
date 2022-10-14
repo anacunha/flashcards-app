@@ -156,6 +156,32 @@ amplify pull
 
 Your components will be on the `src/ui-components/` folder.
 
+## [Predictions](https://docs.amplify.aws/lib/predictions/intro/q/platform/js/)
+
+[Text to speech](https://docs.amplify.aws/lib/predictions/text-speech/q/platform/js/)
+
+```shell
+amplify add predictions
+```
+
+<pre>
+? <b>Please select from one of the categories below</b> Convert
+? <b>What would you like to convert?</b> Generate speech audio from text
+? <b>Provide a friendly name for your resource</b> speechGeneratorad58d821
+? <b>What is the source language?</b> Mexican Spanish
+? <b>Select a speaker</b> Mia - Female
+? <b>Who should have access?</b> Auth users only
+</pre>
+
+```shell
+amplify push
+```
+
+- https://aws-amplify.github.io/amplify-js/api/classes/predictions.html
+- https://docs.amplify.aws/lib/predictions/sample/q/platform/js/#sample-react-app
+- https://aws.amazon.com/blogs/mobile/announcing-the-new-predictions-category-in-amplify-framework/
+- https://github.com/aws-amplify/amplify-js/issues/3928#issuecomment-701354742
+
 ## Resources
 
 - https://ui.docs.amplify.aws/react/components
