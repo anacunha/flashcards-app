@@ -6,10 +6,29 @@
 
 /* eslint-disable */
 import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useDataStoreUpdateAction,
+  useStateMutationAction,
+} from "@aws-amplify/ui-react/internal";
+import { Deck } from "../models";
+import { schema } from "../models/schema";
+import { useEffect } from "react";
 import { Button, Flex, Heading, TextField } from "@aws-amplify/ui-react";
-export default function CreateDeck(props) {
-  const { overrides, ...rest } = props;
+import MyIcon from "./MyIcon";
+export default function UpdateDeck(props) {
+  const { deck, overrides, ...rest } = props;
+  const [nameValue, setNameValue] = useStateMutationAction("");
+  const updateButtonOnClick = useDataStoreUpdateAction({
+    fields: { name: nameValue },
+    id: deck?.id,
+    model: Deck,
+    schema: schema,
+  });
+  useEffect(() => {
+    if (nameValue === "" && deck !== undefined && deck?.name !== undefined)
+      setNameValue(deck?.name);
+  }, [deck]);
   return (
     <Flex
       gap="16px"
@@ -20,7 +39,7 @@ export default function CreateDeck(props) {
       padding="39px 39px 39px 39px"
       backgroundColor="rgba(255,255,255,1)"
       {...rest}
-      {...getOverrideProps(overrides, "CreateDeck")}
+      {...getOverrideProps(overrides, "UpdateDeck")}
     >
       <Flex
         gap="32px"
@@ -54,7 +73,7 @@ export default function CreateDeck(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             level="4"
-            children="Create Deck"
+            children="Update Deck"
             {...getOverrideProps(overrides, "Title")}
           ></Heading>
           <TextField
@@ -72,6 +91,10 @@ export default function CreateDeck(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={nameValue}
+            onChange={(event) => {
+              setNameValue(event.target.value);
+            }}
             {...getOverrideProps(overrides, "Name")}
           ></TextField>
         </Flex>
@@ -86,10 +109,23 @@ export default function CreateDeck(props) {
           size="large"
           isDisabled={false}
           variation="primary"
-          children="Create"
-          {...getOverrideProps(overrides, "CreateButton")}
+          children="Update"
+          onClick={() => {
+            updateButtonOnClick();
+          }}
+          {...getOverrideProps(overrides, "UpdateButton")}
         ></Button>
       </Flex>
+      <MyIcon
+        width="24px"
+        height="24px"
+        shrink="0"
+        overflow="hidden"
+        position="relative"
+        padding="0px 0px 0px 0px"
+        type="close"
+        {...getOverrideProps(overrides, "Close")}
+      ></MyIcon>
     </Flex>
   );
 }

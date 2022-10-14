@@ -30,9 +30,8 @@ export default function ProductDetail(props) {
       <Flex
         gap="32px"
         direction="column"
-        width="740px"
+        width="100%"
         grow="1"
-        basis="740px"
         height="1072px"
         position="relative"
         padding="0px 0px 0px 0px"
@@ -252,6 +251,7 @@ export default function ProductDetail(props) {
       <Flex
         gap="24px"
         direction="column"
+        width="fit-content"
         shrink="0"
         height="331px"
         position="relative"

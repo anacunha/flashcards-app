@@ -63,22 +63,23 @@ export default function HeroLayout1(props) {
       alignItems="center"
       position="relative"
       padding="0px 0px 0px 0px"
+      display="flex"
       {...rest}
       {...getOverrideProps(overrides, "HeroLayout1")}
     >
       <Flex
         gap="10px"
         direction="column"
-        width="720px"
+        width="100%"
         justifyContent="center"
         alignItems="center"
         grow="1"
-        basis="720px"
         alignSelf="stretch"
         overflow="hidden"
         position="relative"
         padding="120px 120px 120px 120px"
         backgroundColor="rgba(255,255,255,1)"
+        display="flex"
         {...getOverrideProps(overrides, "Left")}
       >
         <Flex
@@ -91,6 +92,7 @@ export default function HeroLayout1(props) {
           objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
+          display="flex"
           {...getOverrideProps(overrides, "HeroMessage")}
         >
           <Text
@@ -122,6 +124,7 @@ export default function HeroLayout1(props) {
             objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
+            display="flex"
             {...getOverrideProps(overrides, "Message")}
           >
             <Text
@@ -189,24 +192,24 @@ export default function HeroLayout1(props) {
       <Flex
         gap="10px"
         direction="column"
-        width="720px"
+        width="100%"
         justifyContent="center"
         alignItems="center"
         grow="1"
-        basis="720px"
         alignSelf="stretch"
         overflow="hidden"
         position="relative"
         padding="0px 0px 0px 0px"
+        display="flex"
         {...getOverrideProps(overrides, "Right")}
       >
         <Image
           width="720px"
           height="500px"
           grow="1"
-          basis="500px"
           position="relative"
           padding="0px 0px 0px 0px"
+          display="flex"
           {...getOverrideProps(overrides, "image")}
         ></Image>
       </Flex>

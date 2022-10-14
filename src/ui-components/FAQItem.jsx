@@ -35,9 +35,8 @@ export default function FAQItem(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="1232px"
+          width="100%"
           grow="1"
-          basis="1232px"
           height="84px"
           position="relative"
           padding="0px 0px 0px 0px"

@@ -63,6 +63,7 @@ export default function MarketingFooter(props) {
         <Flex
           gap="8px"
           direction="column"
+          width="fit-content"
           shrink="0"
           height="152px"
           position="relative"
@@ -171,6 +172,7 @@ export default function MarketingFooter(props) {
         <Flex
           gap="8px"
           direction="column"
+          width="fit-content"
           shrink="0"
           height="88px"
           position="relative"

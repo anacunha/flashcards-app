@@ -36,10 +36,9 @@ export default function Ampligram(props) {
       >
         <Flex
           gap="16px"
-          width="568px"
+          width="100%"
           alignItems="center"
           grow="1"
-          basis="568px"
           height="65px"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -176,11 +175,10 @@ export default function Ampligram(props) {
         </Flex>
         <Flex
           gap="10px"
-          width="472px"
+          width="100%"
           justifyContent="flex-end"
           alignItems="center"
           grow="1"
-          basis="472px"
           height="24px"
           position="relative"
           padding="0px 0px 0px 0px"

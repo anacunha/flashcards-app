@@ -37,9 +37,8 @@ export default function Features4x1(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="272px"
+          width="100%"
           grow="1"
-          basis="272px"
           alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -90,9 +89,8 @@ export default function Features4x1(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="272px"
+          width="100%"
           grow="1"
-          basis="272px"
           alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -143,9 +141,8 @@ export default function Features4x1(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="272px"
+          width="100%"
           grow="1"
-          basis="272px"
           alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -196,9 +193,8 @@ export default function Features4x1(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="272px"
+          width="100%"
           grow="1"
-          basis="272px"
           alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"

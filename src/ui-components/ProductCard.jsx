@@ -41,9 +41,8 @@ export default function ProductCard(props) {
       <Flex
         gap="24px"
         direction="column"
-        width="640px"
+        width="100%"
         grow="1"
-        basis="640px"
         height="366px"
         position="relative"
         padding="32px 32px 32px 32px"
@@ -242,7 +241,6 @@ export default function ProductCard(props) {
             letterSpacing="0.01px"
             width="536px"
             grow="1"
-            basis="536px"
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"

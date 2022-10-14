@@ -35,6 +35,7 @@ export default function ProfileCard(props) {
       <Flex
         gap="8px"
         direction="column"
+        width="fit-content"
         alignItems="center"
         shrink="0"
         position="relative"

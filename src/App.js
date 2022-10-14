@@ -1,39 +1,42 @@
-import { withAuthenticator } from '@aws-amplify/ui-react';
+import { DeckCardCollection, NavBar, UpdateDeck } from './ui-components';
+import { Flex, View, withAuthenticator } from "@aws-amplify/ui-react";
 import '@aws-amplify/ui-react/styles.css';
-import { DataStore } from 'aws-amplify';
-import { useEffect, useState } from 'react';
-import { Deck } from './models';
-import { CreateDeck } from "./ui-components";
+import { useState } from 'react';
 
 function App() {
-  const [decks, setDecks] = useState([]);
+  const [showUpdateDeckForm, setShowUpdateDeckForm] = useState(false);
+  const [deck, setDeck] = useState();
 
-  const createDeck = async () => {
-    const newDeck = await DataStore.save(new Deck({
-      name: prompt("Deck name")
-    }))
-    console.log(newDeck);
-  }
-
-  const getDecks = async () => {
-    const data = await DataStore.query(Deck)
-    setDecks(data)
-  }
-
-  useEffect(() => {
-    getDecks()
-  })
   return (
     <div className="App">
-      <ul>
-        {decks.map((deck) => (
-          <li key={deck.id}>
-            {deck.name}
-          </li>
-        ))}
-      </ul>
-      <CreateDeck />
-      <button onClick={createDeck}>Create Deck</button>
+      <NavBar width='100vw' />
+      <Flex
+        direction="row"
+        justifyContent="center"
+      >
+        <View>
+          <DeckCardCollection overrideItems={({ item }) => ({
+            overrides: {
+              Cards: {
+                children: `${item.cards.length} ${item.cards.length === 1 ? 'card' : 'cards'}`
+              },
+              EditButton: {
+                onClick: () => {
+                  setShowUpdateDeckForm(true);
+                  setDeck(item);
+                }
+              }
+            }
+          })} />
+        </View>
+        <View>
+          {showUpdateDeckForm ?
+            <UpdateDeck deck={deck} overrides={{
+              Close: { onClick: () => setShowUpdateDeckForm(false) }
+            }} />
+            : ''}
+        </View>
+      </Flex>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 {
   "auth": {
-    "flashcards23904dd8": {
+    "flashcardsb4c37c28": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -32,7 +32,7 @@
       "dependsOn": [
         {
           "category": "auth",
-          "resourceName": "flashcards23904dd8",
+          "resourceName": "flashcardsb4c37c28",
           "attributes": [
             "UserPoolId"
           ]
@@ -43,10 +43,14 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authflashcards23904dd8"
+              "userPoolId": "authflashcardsb4c37c28"
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
         }
       }
     }

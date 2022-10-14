@@ -92,9 +92,8 @@ export default function CommentCard(props) {
         <Flex
           gap="8px"
           direction="column"
-          width="351px"
+          width="100%"
           grow="1"
-          basis="351px"
           height="80px"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -177,11 +176,10 @@ export default function CommentCard(props) {
             </Flex>
             <Flex
               gap="0"
-              width="66px"
+              width="100%"
               justifyContent="flex-end"
               alignItems="flex-start"
               grow="1"
-              basis="66px"
               height="24px"
               position="relative"
               padding="0px 0px 0px 0px"

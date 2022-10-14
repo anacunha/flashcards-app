@@ -32,7 +32,6 @@ export default function HeroLayout3(props) {
         justifyContent="center"
         alignItems="center"
         grow="1"
-        basis="228px"
         alignSelf="stretch"
         objectFit="cover"
         position="relative"

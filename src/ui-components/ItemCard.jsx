@@ -57,6 +57,7 @@ export default function ItemCard(props) {
         <Flex
           gap="0"
           direction="column"
+          width="fit-content"
           shrink="0"
           height="44px"
           position="relative"

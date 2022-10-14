@@ -30,10 +30,9 @@ export default function FormCheckout(props) {
     >
       <Flex
         gap="0"
-        width="683px"
+        width="100%"
         alignItems="flex-start"
         grow="1"
-        basis="683px"
         height="729px"
         position="relative"
         padding="32px 0px 32px 0px"
@@ -43,11 +42,10 @@ export default function FormCheckout(props) {
         <Flex
           gap="32px"
           direction="column"
-          width="683px"
+          width="100%"
           justifyContent="center"
           alignItems="center"
           grow="1"
-          basis="683px"
           height="665px"
           position="relative"
           padding="0px 0px 0px 0px"
