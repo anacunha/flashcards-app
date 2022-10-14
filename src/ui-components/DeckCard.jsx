@@ -15,7 +15,7 @@ import { schema } from "../models/schema";
 import { Button, Flex, Heading, Text } from "@aws-amplify/ui-react";
 export default function DeckCard(props) {
   const { deck, overrides, ...rest } = props;
-  const deleteOnClick = useDataStoreDeleteAction({
+  const deleteButtonOnClick = useDataStoreDeleteAction({
     id: deck?.id,
     model: Deck,
     schema: schema,
@@ -27,6 +27,7 @@ export default function DeckCard(props) {
       alignItems="flex-start"
       position="relative"
       border="1px SOLID rgba(174,179,183,1)"
+      borderRadius="12px"
       padding="39px 39px 39px 39px"
       backgroundColor="rgba(255,255,255,1)"
       {...rest}
@@ -99,7 +100,7 @@ export default function DeckCard(props) {
           isDisabled={false}
           variation="default"
           children="Edit"
-          {...getOverrideProps(overrides, "Edit")}
+          {...getOverrideProps(overrides, "EditButton")}
         ></Button>
         <Button
           display="flex"
@@ -116,9 +117,9 @@ export default function DeckCard(props) {
           variation="default"
           children="Delete"
           onClick={() => {
-            deleteOnClick();
+            deleteButtonOnClick();
           }}
-          {...getOverrideProps(overrides, "Delete")}
+          {...getOverrideProps(overrides, "DeleteButton")}
         ></Button>
       </Flex>
     </Flex>
