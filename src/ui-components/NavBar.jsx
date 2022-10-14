@@ -79,6 +79,24 @@ export default function NavBar(props) {
           justifyContent="center"
           alignItems="center"
           shrink="0"
+          height="42px"
+          position="relative"
+          border="1px SOLID rgba(174,179,183,1)"
+          borderRadius="5px"
+          padding="8px 16px 8px 16px"
+          size="default"
+          isDisabled={false}
+          variation="default"
+          children="Create Deck"
+          {...getOverrideProps(overrides, "CreateDeckButton")}
+        ></Button>
+        <Button
+          display="flex"
+          gap="0"
+          width="fit-content"
+          justifyContent="center"
+          alignItems="center"
+          shrink="0"
           height="40px"
           position="relative"
           size="default"

@@ -29,7 +29,7 @@ export default function DeckCard(props) {
       position="relative"
       border="1px SOLID rgba(174,179,183,1)"
       borderRadius="12px"
-      padding="39px 39px 39px 39px"
+      padding="23px 31px 23px 31px"
       backgroundColor="rgba(255,255,255,1)"
       {...rest}
       {...getOverrideProps(overrides, "DeckCard")}
