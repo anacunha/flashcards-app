@@ -6,8 +6,11 @@
 
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
+import { Deck } from "../models";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type UpdateDeckProps = React.PropsWithChildren<Partial<FlexProps> & {
+    deck?: Deck;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
 export default function UpdateDeck(props: UpdateDeckProps): React.ReactElement;
