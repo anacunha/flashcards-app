@@ -12,7 +12,8 @@ import {
 } from "@aws-amplify/ui-react/internal";
 import { Deck } from "../models";
 import { schema } from "../models/schema";
-import { Button, Flex, Heading, Text } from "@aws-amplify/ui-react";
+import { Flex, Heading, Text } from "@aws-amplify/ui-react";
+import MyIcon from "./MyIcon";
 export default function DeckCard(props) {
   const { deck, overrides, ...rest } = props;
   const deleteButtonOnClick = useDataStoreDeleteAction({
@@ -76,51 +77,38 @@ export default function DeckCard(props) {
       </Flex>
       <Flex
         gap="16px"
-        direction="column"
         width="fit-content"
-        alignItems="stretch"
+        justifyContent="flex-end"
+        alignItems="flex-start"
         shrink="0"
         alignSelf="stretch"
         position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Actions")}
       >
-        <Button
-          display="flex"
-          gap="0"
-          justifyContent="center"
-          alignItems="center"
+        <MyIcon
+          width="24px"
+          height="24px"
           shrink="0"
-          alignSelf="stretch"
-          objectFit="cover"
+          overflow="hidden"
           position="relative"
-          border="1px SOLID rgba(174,179,183,1)"
-          borderRadius="5px"
-          size="small"
-          isDisabled={false}
-          variation="default"
-          children="Edit"
+          padding="0px 0px 0px 0px"
+          type="edit"
           {...getOverrideProps(overrides, "EditButton")}
-        ></Button>
-        <Button
-          display="flex"
-          gap="0"
-          width="fit-content"
-          justifyContent="center"
-          alignItems="center"
+        ></MyIcon>
+        <MyIcon
+          width="24px"
+          height="24px"
           shrink="0"
+          overflow="hidden"
           position="relative"
-          border="1px SOLID rgba(174,179,183,1)"
-          borderRadius="5px"
-          size="small"
-          isDisabled={false}
-          variation="default"
-          children="Delete"
+          padding="0px 0px 0px 0px"
+          type="delete"
           onClick={() => {
             deleteButtonOnClick();
           }}
           {...getOverrideProps(overrides, "DeleteButton")}
-        ></Button>
+        ></MyIcon>
       </Flex>
     </Flex>
   );
