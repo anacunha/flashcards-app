@@ -159,4 +159,5 @@ Your components will be on the `src/ui-components/` folder.
 ## Resources
 
 - https://ui.docs.amplify.aws/react/components
+- https://docs.amplify.aws/console/uibuilder/override/#extend-generated-collections-via-overrideitems-prop
 - https://docs.amplify.aws/console/uibuilder/eventhandling/#bind-ui-to-create-update-or-delete-a-data-record
