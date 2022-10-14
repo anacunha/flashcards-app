@@ -1,4 +1,4 @@
-import { Amplify, Predictions } from 'aws-amplify';
+import { Predictions } from 'aws-amplify';
 import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions';
 import { CreateDeck, DeckCardCollection, FlashcardCollection, NavBar } from './ui-components';
 import { Flex, View, withAuthenticator } from "@aws-amplify/ui-react";
