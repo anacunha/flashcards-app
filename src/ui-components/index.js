@@ -7,6 +7,7 @@
 export { default as FeaturesText2x2 } from "./FeaturesText2x2";
 export { default as ProfileCard } from "./ProfileCard";
 export { default as TallCard } from "./TallCard";
+export { default as DeckCardCollection } from "./DeckCardCollection";
 export { default as ProductDetail } from "./ProductDetail";
 export { default as ItemCard } from "./ItemCard";
 export { default as HeroLayout4 } from "./HeroLayout4";
