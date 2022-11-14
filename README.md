@@ -111,7 +111,7 @@ Use a Cognito user pool configured as a part of this project.
 
 ### [Data modeling](https://docs.amplify.aws/cli/graphql/data-modeling/)
 
-Update the GraphQL schema file `amplify/backend/api/flashcards/schema.graphql` to configure our application's data model . Amplify will create [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) tables for each of our models annotated with `@model`.
+Replace the content of the GraphQL schema file `amplify/backend/api/flashcards/schema.graphql` with the one provided below, to configure our application's data model . Amplify will create [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) tables for each of our models annotated with `@model`.
 
 - Only the `owner` of a record will be able to access and modify it. To do that, we will use the `@auth` directive to configure [owner-based data access](https://docs.amplify.aws/cli/graphql/authorization-rules/#per-user--owner-based-data-access).
 - To prevent an owner from reassigning their record to another user, we will set up [field-level authorization rules](https://docs.amplify.aws/cli/graphql/authorization-rules/#field-level-authorization-rules) to protect the `owner` field.
