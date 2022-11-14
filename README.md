@@ -80,11 +80,17 @@ export default withAuthenticator(App);
 
 ## [API (GraphQL)](https://docs.amplify.aws/lib/graphqlapi/getting-started/q/platform/js/)
 
-Amplify will use [AWS AppSync](https://aws.amazon.com/appsync/) and [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) to power our GraphQL API:
-
 ```shell
 amplify add api
 ```
+
+Select GraphQL
+```shell
+? Select from one of the below mentioned services: (Use arrow keys)
+<b> ❯ GraphQL <b>
+  REST 
+```
+Amplify will use [AWS AppSync](https://aws.amazon.com/appsync/) and [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) to power our GraphQL API:
 
 - Select `Amazon Cognito User Pool` as our API [authorization type](https://docs.amplify.aws/cli/graphql/authorization-rules/).
 - Enable [Conflict resolution](https://docs.amplify.aws/lib/datastore/conflict/q/platform/js/) with `Auto Merge` strategy.
