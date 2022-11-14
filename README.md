@@ -87,7 +87,7 @@ amplify add api
 Select GraphQL
 ```shell
 ? Select from one of the below mentioned services: (Use arrow keys)
-<b> ❯ GraphQL <b>
+<b> ❯ GraphQL </b>
   REST 
 ```
 Amplify will use [AWS AppSync](https://aws.amazon.com/appsync/) and [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) to power our GraphQL API:
