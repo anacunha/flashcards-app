@@ -85,11 +85,11 @@ amplify add api
 ```
 
 Select GraphQL
-```shell
+<pre>
 ? Select from one of the below mentioned services: (Use arrow keys)
 <b> ❯ GraphQL </b>
   REST 
-```
+</pre>
 Amplify will use [AWS AppSync](https://aws.amazon.com/appsync/) and [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) to power our GraphQL API:
 
 - Select `Amazon Cognito User Pool` as our API [authorization type](https://docs.amplify.aws/cli/graphql/authorization-rules/).
