@@ -18,7 +18,7 @@ Initialize Amplify from the project root folder to create a cloud project in the
 amplify init
 ```
 
-Install the [AWS Amplify library](https://github.com/aws-amplify/amplify-js):
+Install the [AWS Amplify Javascript Library](https://github.com/aws-amplify/amplify-js):
 
 ```shell
 npm install aws-amplify
@@ -43,9 +43,11 @@ amplify add auth
 Use the default configuration:
 
 <pre>
-? <b>Do you want to use the default authentication and security configuration?</b> Default configuration
-? <b>How do you want users to be able to sign in?</b> Username
-? <b>Do you want to configure advanced settings?</b> No, I am done.
+ Do you want to use the default authentication and security configuration? 
+ <b> ❯ Default configuration </b>
+  Default configuration with Social Provider (Federation) 
+  Manual configuration 
+  I want to learn more.
 </pre>
 
 Run `amplify push` to provision the authentication resources in the cloud:
