@@ -35,8 +35,7 @@ jobs:
         run: echo $AMPLIFY
         
       - name: Pull Amplify App 👾
-#         run: amplify pull --amplify $AMPLIFY --providers $PROVIDERS --frontend $FRONTEND --yes
-        run: echo $AMPLIFY
+        run: amplify pull --amplify $AMPLIFY --providers $PROVIDERS --frontend $FRONTEND --yes
         env:
           REACTCONFIG: "{\"SourceDir\":\"src\",\"DistributionDir\":\"build\",\"BuildCommand\":\"npm run-script build\",\"StartCommand\":\"npm run-script start\"}"
           AWSCLOUDFORMATIONCONFIG: "{\"configLevel\":\"project\",\"useProfile\":false,\"accessKeyId\":${{ secrets.AWS_ACCESS_KEY_ID }},\"secretAccessKey\":${{ secrets.AWS_SECRET_ACCESS_KEY }},\"region\":${{ secrets.AWS_REGION }}}"
