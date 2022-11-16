@@ -23,6 +23,9 @@ jobs:
           
       - name: Install Amplify
         run: npm install -g @aws-amplify/cli
+        
+      - name: Pull Amplify App 👾
+        run: amplify pull --appId d399ez1gyp6my0 --envName dev
           
       - name: Test Amplify
         run: amplify export --out ./unique-folder-name
