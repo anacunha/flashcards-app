@@ -34,9 +34,10 @@ jobs:
         run: |
           export AMPLIFY={"projectName":"flashcards","appId":"d399ez1gyp6my0","envName":"dev","defaultEditor":"code"}
           export PROVIDERS={"awscloudformation":{"configLevel":"project","useProfile":false,"accessKeyId":${{ secrets.AWS_ACCESS_KEY_ID }},"secretAccessKey":${{ secrets.AWS_SECRET_ACCESS_KEY }},"region",${{ secrets.AWS_REGION }}}}
+          export FRONTEND={"frontend":"javascript","framework":"react","config":{"SourceDir":"src","DistributionDir":"build","BuildCommand":"npm run-script build","StartCommand":"npm run-script start"}}
         
       - name: Pull Amplify App 👾
-        run: amplify pull --providers $PROVIDERS
+        run: amplify pull --amplify $AMPLIFY --providers $PROVIDERS --frontend $FRONTEND
           
       - name: Test Amplify
         run: amplify export --out ./unique-folder-name
