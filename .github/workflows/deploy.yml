@@ -38,6 +38,7 @@ jobs:
           \"BuildCommand\":\"npm run-script build\",\
           \"StartCommand\":\"npm run-script start\"\
           }"
+          
           export AWSCLOUDFORMATIONCONFIG="{\
           \"configLevel\":\"project\",\
           \"useProfile\":false,\
@@ -45,20 +46,26 @@ jobs:
           \"secretAccessKey\":${{ secrets.AWS_SECRET_ACCESS_KEY }},\
           \"region\":${{ secrets.AWS_REGION }}\
           }"
+          
           export AMPLIFY="{\
           \"projectName\":\"flashcards\",\
           \"appId\":\"d399ez1gyp6my0\",\
           \"envName\":\"dev\",\
           \"defaultEditor\":\"code\"\
           }"
+          
           export FRONTEND="{\
           \"frontend\":\"javascript\",\
           \"framework\":\"react\",\
           \"config\":$REACTCONFIG\
           }"
+          
           export PROVIDERS="{\
           \"awscloudformation\":$AWSCLOUDFORMATIONCONFIG\
           }"
+          
+      - name: Test env
+        run: env
         
       - name: Pull Amplify App 👾
         run: amplify pull --amplify $AMPLIFY --providers $PROVIDERS --frontend $FRONTEND --yes
