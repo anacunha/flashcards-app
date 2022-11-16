@@ -41,9 +41,7 @@ jobs:
         env:
           AMPLIFY: "{\"projectName\":\"flashcards\",\"appId\":\"d399ez1gyp6my0\",\"envName\":\"dev\",\"defaultEditor\":\"code\"}"
           FRONTEND: "{\"frontend\":\"javascript\",\"framework\":\"react\",\"config\":{\"SourceDir\":\"src\",\"DistributionDir\":\"build\",\"BuildCommand\":\"npm run-script build\",\"StartCommand\":\"npm run-script start\"}}"
-#           PROVIDERS: "{\"awscloudformation\":{\"configLevel\":\"project\",\"useProfile\":false,\"accessKeyId\":${{ secrets.AWS_ACCESS_KEY_ID }},\"secretAccessKey\":${{ secrets.AWS_SECRET_ACCESS_KEY }},\"region\":${{ secrets.AWS_REGION }}}}"
-          PROVIDERS: "{\"awscloudformation\":{\"configLevel\":\"project\",\"useProfile\":true,\"profile\":\"default\"}}"
-       
+          PROVIDERS: "{\"awscloudformation\":{\"configLevel\":\"project\",\"useProfile\":false,\"accessKeyId\":\"AKIATTJJEF35V5BNRC5C\",\"secretAccessKey\":\"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\",\"region\":\"us-west-2\"}}"
        
       - name: Test Amplify
         run: amplify status
