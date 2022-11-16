@@ -25,7 +25,7 @@ jobs:
         run: npm install -g @aws-amplify/cli
           
       - name: Test Amplify
-        run: aws export --out ./unique-folder-name
+        run: amplify export --out ./unique-folder-name
         
       - name: Test exported app
         run: ls ./unique-folder-name
