@@ -65,7 +65,7 @@ jobs:
           }"
           
       - name: Test env
-        run: env
+        run: echo $AMPLIFY
         
       - name: Pull Amplify App 👾
         run: amplify pull --amplify $AMPLIFY --providers $PROVIDERS --frontend $FRONTEND --yes
