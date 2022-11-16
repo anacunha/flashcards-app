@@ -1,0 +1,32 @@
+name: Deploy
+
+on:
+  pull_request: {}
+  workflow_dispatch: {}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          
+      - name: Install Amplify
+        run: npm install -g @aws-amplify/cli
+          
+      - name: Test Amplify
+        run: aws export --out ./unique-folder-name
+        
+      - name: Test exported app
+        run: ls ./unique-folder-name
+        
