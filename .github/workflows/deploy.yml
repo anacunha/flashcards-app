@@ -31,7 +31,7 @@ jobs:
         run: npm install -g @aws-amplify/cli
         
       - name: Setup Amplify
-        run: >
+        run: |
           export REACTCONFIG="{\
           \"SourceDir\":\"src\",\
           \"DistributionDir\":\"build\",\
