@@ -32,37 +32,11 @@ jobs:
         
       - name: Setup Amplify
         run: |
-          export REACTCONFIG="{\
-          \"SourceDir\":\"src\",\
-          \"DistributionDir\":\"build\",\
-          \"BuildCommand\":\"npm run-script build\",\
-          \"StartCommand\":\"npm run-script start\"\
-          }"
-          
-          export AWSCLOUDFORMATIONCONFIG="{\
-          \"configLevel\":\"project\",\
-          \"useProfile\":false,\
-          \"accessKeyId\":${{ secrets.AWS_ACCESS_KEY_ID }},\
-          \"secretAccessKey\":${{ secrets.AWS_SECRET_ACCESS_KEY }},\
-          \"region\":${{ secrets.AWS_REGION }}\
-          }"
-          
-          export AMPLIFY="{\
-          \"projectName\":\"flashcards\",\
-          \"appId\":\"d399ez1gyp6my0\",\
-          \"envName\":\"dev\",\
-          \"defaultEditor\":\"code\"\
-          }"
-          
-          export FRONTEND="{\
-          \"frontend\":\"javascript\",\
-          \"framework\":\"react\",\
-          \"config\":$REACTCONFIG\
-          }"
-          
-          export PROVIDERS="{\
-          \"awscloudformation\":$AWSCLOUDFORMATIONCONFIG\
-          }"
+          export REACTCONFIG="{\"SourceDir\":\"src\",\"DistributionDir\":\"build\",\"BuildCommand\":\"npm run-script build\",\"StartCommand\":\"npm run-script start\"}"          
+          export AWSCLOUDFORMATIONCONFIG="{\"configLevel\":\"project\",\"useProfile\":false,\"accessKeyId\":${{ secrets.AWS_ACCESS_KEY_ID }},\"secretAccessKey\":${{ secrets.AWS_SECRET_ACCESS_KEY }},\"region\":${{ secrets.AWS_REGION }}}"
+          export AMPLIFY="{\"projectName\":\"flashcards\",\"appId\":\"d399ez1gyp6my0\",\"envName\":\"dev\",\"defaultEditor\":\"code\"}"
+          export FRONTEND="{\"frontend\":\"javascript\",\"framework\":\"react\",\"config\":$REACTCONFIG}"
+          export PROVIDERS="{\"awscloudformation\":$AWSCLOUDFORMATIONCONFIG}"
           
       - name: Test env
         run: echo $AMPLIFY
