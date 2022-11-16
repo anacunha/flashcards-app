@@ -33,7 +33,7 @@ jobs:
       - name: Setup Amplify
         run: |
           export AMPLIFY={"projectName":"flashcards","appId":"d399ez1gyp6my0","envName":"dev","defaultEditor":"code"}
-          export PROVIDERS={"awscloudformation":{"configLevel":"project","useProfile":false,"profileName":"default"}}
+          export PROVIDERS={"awscloudformation":{"configLevel":"project","useProfile":false,"accessKeyId":${{ secrets.AWS_ACCESS_KEY_ID }},"secretAccessKey":${{ secrets.AWS_SECRET_ACCESS_KEY }},"region",${{ secrets.AWS_REGION }}}}
         
       - name: Pull Amplify App 👾
         run: amplify pull --amplify $AMPLIFY --providers $PROVIDERS
