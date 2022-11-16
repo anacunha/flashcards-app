@@ -45,7 +45,7 @@ jobs:
        
        
       - name: Test Amplify
-        run: amplify export --out ./unique-folder-name
+        run: amplify status
         
       - name: Test exported app
         run: ls ./unique-folder-name
