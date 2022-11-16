@@ -31,10 +31,34 @@ jobs:
         run: npm install -g @aws-amplify/cli
         
       - name: Setup Amplify
-        run: |
-          export AMPLIFY={"projectName":"flashcards","appId":"d399ez1gyp6my0","envName":"dev","defaultEditor":"code"}
-          export PROVIDERS={"awscloudformation":{"configLevel":"project","useProfile":false,"profileName":"default","accessKeyId":${{ secrets.AWS_ACCESS_KEY_ID }},"secretAccessKey":${{ secrets.AWS_SECRET_ACCESS_KEY }},"region",${{ secrets.AWS_REGION }}}}
-          export FRONTEND={"frontend":"javascript","framework":"react","config":{"SourceDir":"src","DistributionDir":"build","BuildCommand":"npm run-script build","StartCommand":"npm run-script start"}}
+        run: >
+          export REACTCONFIG="{\
+          \"SourceDir\":\"src\",\
+          \"DistributionDir\":\"build\",\
+          \"BuildCommand\":\"npm run-script build\",\
+          \"StartCommand\":\"npm run-script start\"\
+          }"
+          export AWSCLOUDFORMATIONCONFIG="{\
+          \"configLevel\":\"project\",\
+          \"useProfile\":false,\
+          \"accessKeyId\":${{ secrets.AWS_ACCESS_KEY_ID }},\
+          \"secretAccessKey\":${{ secrets.AWS_SECRET_ACCESS_KEY }},\
+          \"region\":${{ secrets.AWS_REGION }}\
+          }"
+          export AMPLIFY="{\
+          \"projectName\":\"flashcards\",\
+          \"appId\":\"d399ez1gyp6my0\",\
+          \"envName\":\"dev\",\
+          \"defaultEditor\":\"code\"\
+          }"
+          export FRONTEND="{\
+          \"frontend\":\"javascript\",\
+          \"framework\":\"react\",\
+          \"config\":$REACTCONFIG\
+          }"
+          export PROVIDERS="{\
+          \"awscloudformation\":$AWSCLOUDFORMATIONCONFIG\
+          }"
         
       - name: Pull Amplify App 👾
         run: amplify pull --amplify $AMPLIFY --providers $PROVIDERS --frontend $FRONTEND --yes
