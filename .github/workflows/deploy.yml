@@ -21,11 +21,16 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
           
+      - name: Test AWS profile
+        run: aws configure list
+          
       - name: Install Amplify
         run: npm install -g @aws-amplify/cli
         
       - name: Setup Amplify
-        run: export AMPLIFY={"projectName":"flashcards","appId":"d399ez1gyp6my0","envName":"dev","defaultEditor":"code"}
+        run: |
+          export AMPLIFY={"projectName":"flashcards","appId":"d399ez1gyp6my0","envName":"dev","defaultEditor":"code"}
+          export PROVIDERS={"awscloudformation":{"configLevel":"project","useProfile":true,"profileName":"default"}}
         
       - name: Pull Amplify App 👾
         run: amplify pull --amplify $AMPLIFY
