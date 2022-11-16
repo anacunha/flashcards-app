@@ -24,6 +24,9 @@ jobs:
       - name: Install Amplify
         run: npm install -g @aws-amplify/cli
         
+      - name: Setup Amplify
+        run: export AMPLIFY={"projectName":"flashcards","appId":"d399ez1gyp6my0","envName":"dev","defaultEditor":"code"}
+        
       - name: Pull Amplify App 👾
         run: amplify pull --appId d399ez1gyp6my0 --envName dev
           
