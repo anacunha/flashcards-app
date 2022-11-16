@@ -22,7 +22,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
           
       - name: Test AWS profile
-        run: aws configure list
+        run: aws configure list-profiles
           
       - name: Install Amplify
         run: npm install -g @aws-amplify/cli
