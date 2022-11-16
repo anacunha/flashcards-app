@@ -37,7 +37,7 @@ jobs:
           export FRONTEND={"frontend":"javascript","framework":"react","config":{"SourceDir":"src","DistributionDir":"build","BuildCommand":"npm run-script build","StartCommand":"npm run-script start"}}
         
       - name: Pull Amplify App 👾
-        run: amplify pull --amplify $AMPLIFY --providers $PROVIDERS --frontend $FRONTEND
+        run: amplify pull --amplify $AMPLIFY --providers $PROVIDERS --frontend $FRONTEND --yes
           
       - name: Test Amplify
         run: amplify export --out ./unique-folder-name
