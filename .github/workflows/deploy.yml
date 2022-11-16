@@ -33,7 +33,7 @@ jobs:
           export PROVIDERS={"awscloudformation":{"configLevel":"project","useProfile":true,"profileName":"default"}}
         
       - name: Pull Amplify App 👾
-        run: amplify pull --amplify $AMPLIFY
+        run: amplify pull --amplify $AMPLIFY --providers $PROVIDERS
           
       - name: Test Amplify
         run: amplify export --out ./unique-folder-name
