@@ -28,7 +28,7 @@ jobs:
         run: export AMPLIFY={"projectName":"flashcards","appId":"d399ez1gyp6my0","envName":"dev","defaultEditor":"code"}
         
       - name: Pull Amplify App 👾
-        run: amplify pull --appId d399ez1gyp6my0 --envName dev
+        run: amplify pull --amplify $AMPLIFY
           
       - name: Test Amplify
         run: amplify export --out ./unique-folder-name
