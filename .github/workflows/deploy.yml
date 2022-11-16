@@ -23,6 +23,9 @@ jobs:
           
       - name: Test AWS profile
         run: aws configure list-profiles
+        
+      - name: whatever
+        run: echo $AWS_ACCESS_KEY_ID
           
       - name: Install Amplify
         run: npm install -g @aws-amplify/cli
@@ -30,7 +33,7 @@ jobs:
       - name: Setup Amplify
         run: |
           export AMPLIFY={"projectName":"flashcards","appId":"d399ez1gyp6my0","envName":"dev","defaultEditor":"code"}
-          export PROVIDERS={"awscloudformation":{"configLevel":"project","useProfile":true,"profileName":"default"}}
+          export PROVIDERS={"awscloudformation":{"configLevel":"project","useProfile":false,"profileName":"default"}}
         
       - name: Pull Amplify App 👾
         run: amplify pull --amplify $AMPLIFY --providers $PROVIDERS
