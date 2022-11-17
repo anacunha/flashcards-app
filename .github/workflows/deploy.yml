@@ -1,0 +1,44 @@
+name: Deploy
+
+on:
+  pull_request: {}
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Amplify
+        run: npm install -g @aws-amplify/cli
+
+      - name: Pull Amplify App 👾
+        run: ./.github/scripts/pull_amplify_app.sh
+        shell: bash
+        env:
+          ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          REGION: ${{ secrets.AWS_REGION }}
+
+      - name: Test Amplify
+        run: amplify status
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Test S3
+        run: aws s3 ls
+
+      # - name: Test exported app
+      #   run: ls ./unique-folder-name
+
