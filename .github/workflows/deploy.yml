@@ -22,7 +22,9 @@ jobs:
 
       - name: Get Amplify App name
         run: |
-          echo "AMPLIFY_APP_NAME=$(aws amplify get-app --app-id ${{ secrets.AMPLIFY_APP_ID }} --query 'app.name')" >> $GITHUB_ENV
+          echo "AMPLIFY_APP_NAME=$(aws amplify get-app --app-id $APP_ID --query 'app.name' --output text)" >> $GITHUB_ENV
+        env:
+          APP_ID: ${{ secrets.AMPLIFY_APP_ID }}
 
       - name: Install Amplify
         run: npm install -g @aws-amplify/cli
