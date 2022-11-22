@@ -190,6 +190,45 @@ amplify push
 - https://aws.amazon.com/blogs/mobile/announcing-the-new-predictions-category-in-amplify-framework/
 - https://github.com/aws-amplify/amplify-js/issues/3928#issuecomment-701354742
 
+
+## CDK
+
+```shell
+amplify export --out <your-cdk-project-location>/lib
+```
+
+```shell
+npx cdk bootstrap --profile reinvent
+```
+
+```shell
+npx cdk deploy --profile reinvent
+```
+
+<pre>
+<b>Do you wish to deploy these changes (y/n)?</b> y
+</pre>
+
+- https://docs.amplify.aws/cli/usage/export-to-cdk/
+- https://aws.amazon.com/blogs/mobile/export-amplify-backends-to-cdk-and-use-with-existing-deployment-pipelines/
+- https://aws.amazon.com/blogs/developer/cdk-pipelines-continuous-delivery-for-aws-cdk-applications/
+- https://github.com/renebrandel/mycdkpipeline
+- https://aws.amazon.com/blogs/mobile/extend-amplify-backend-with-custom-aws-resource-using-aws-cdk-or-cloudformation/
+- https://aws.amazon.com/blogs/mobile/override-amplify-generated-backend-resources-using-cdk/
+- https://aws.amazon.com/blogs/developer/cdk-pipelines-continuous-delivery-for-aws-cdk-applications/
+
+## GitHub
+
+The token should have the scopes `repo` and `admin:repo_hook`.
+
+```shell
+aws secretsmanager create-secret --name github-token --description "Access Token for GitHub" --secret-string "GitHub Access Token" --profile reinvent --region us-west-2
+```
+
+- https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+- https://github.com/cdklabs/cdk-pipelines-github
+- https://constructs.dev/packages/cdk-pipelines-github/v/0.3.1?lang=typescript
+
 ## Resources
 
 - https://ui.docs.amplify.aws/react/components
