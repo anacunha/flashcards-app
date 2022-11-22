@@ -16,8 +16,8 @@ AWSCLOUDFORMATIONCONFIG="{\
 \"region\":\"$REGION\"\
 }"
 AMPLIFY="{\
-\"projectName\":\"flashcards\",\
-\"appId\":\"d399ez1gyp6my0\",\
+\"projectName\":\"$PROJECT_NAME\",\
+\"appId\":\"$APP_ID\",\
 \"envName\":\"dev\",\
 \"defaultEditor\":\"code\"\
 }"

@@ -10,8 +10,19 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout 📥
         uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials 🔐
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Get Amplify App name
+        run: |
+          echo "AMPLIFY_APP_NAME=$(aws amplify get-app --app-id ${{ secrets.AMPLIFY_APP_ID }} --query 'app.name')" >> $GITHUB_ENV
 
       - name: Install Amplify
         run: npm install -g @aws-amplify/cli
@@ -23,20 +34,8 @@ jobs:
           ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           REGION: ${{ secrets.AWS_REGION }}
+          APP_ID: ${{ secrets.AMPLIFY_APP_ID }}
+          PROJECT_NAME: ${{ env.AMPLIFY_APP_NAME }}
 
       - name: Test Amplify
         run: amplify status
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Test S3
-        run: aws s3 ls
-
-      # - name: Test exported app
-      #   run: ls ./unique-folder-name
-
