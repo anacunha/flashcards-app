@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-flashcards-dev-132319-authRole",
+      "UnauthRoleArn": "arn:aws:iam::247583747835:role/amplify-flashcards-dev-132319-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::247583747835:role/amplify-flashcards-dev-132319-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-flashcards-dev-132319-deployment",
+      "UnauthRoleName": "amplify-flashcards-dev-132319-unauthRole",
+      "StackName": "amplify-flashcards-dev-132319",
+      "StackId": "arn:aws:cloudformation:us-west-1:247583747835:stack/amplify-flashcards-dev-132319/511fd5e0-6c14-11ed-a9fc-060b629c7c37",
+      "AmplifyAppId": "d1u16pyd2e1lol"
+    }
+  }
+}
