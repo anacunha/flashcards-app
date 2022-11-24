@@ -117,19 +117,19 @@ Replace the content of the GraphQL schema file `amplify/backend/api/flashcards/s
 - To prevent an owner from reassigning their record to another user, we will set up [field-level authorization rules](https://docs.amplify.aws/cli/graphql/authorization-rules/#field-level-authorization-rules) to protect the `owner` field.
 
 ```graphql
-type Card @model @auth(rules: [{allow: owner}]) {
+type Card @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   front: String!
   back: String!
-  deckId: ID! @index(name: "byDeck")
-  owner: String @auth(rules: [{allow: owner, operations: [read, delete]}])
+  deckID: ID! @index(name: "byDeck")
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
 }
 
-type Deck @model @auth(rules: [{allow: owner}]) {
+type Deck @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   name: String!
   cards: [Card!] @hasMany(indexName: "byDeck", fields: ["id"])
-  owner: String @auth(rules: [{allow: owner, operations: [read, delete]}])
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
 }
 ```
 
