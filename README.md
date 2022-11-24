@@ -24,7 +24,7 @@ Install the [AWS Amplify Javascript Library](https://github.com/aws-amplify/ampl
 npm install aws-amplify
 ```
 
-Configure Amplify on our frontend app `src/index.js` file so we can use it to interact with our backend services:
+[Configure Amplify](https://docs.amplify.aws/lib/client-configuration/configuring-amplify-categories/q/platform/js/) on our frontend app `src/index.js` file so we can use it to interact with our backend services:
 
 ```javascript
 import { Amplify } from 'aws-amplify';
