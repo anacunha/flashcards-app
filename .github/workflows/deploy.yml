@@ -27,7 +27,9 @@ jobs:
           APP_ID: ${{ secrets.AMPLIFY_APP_ID }}
 
       - name: Install Amplify
-        run: npm install -g @aws-amplify/cli
+        run: |
+          npm install -g @aws-amplify/cli
+          amplify --version
 
       - name: Pull Amplify App 👾
         run: ./.github/scripts/pull_amplify_app.sh
