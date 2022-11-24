@@ -43,10 +43,10 @@ amplify add auth
 Use the default configuration:
 
 <pre>
- Do you want to use the default authentication and security configuration? 
+ Do you want to use the default authentication and security configuration?
  <b> ❯ Default configuration </b>
-  Default configuration with Social Provider (Federation) 
-  Manual configuration 
+  Default configuration with Social Provider (Federation)
+  Manual configuration
   I want to learn more.
 </pre>
 
@@ -88,7 +88,7 @@ Select GraphQL
 <pre>
 ? Select from one of the below mentioned services: (Use arrow keys)
 <b> ❯ GraphQL </b>
-  REST 
+  REST
 </pre>
 Amplify will use [AWS AppSync](https://aws.amazon.com/appsync/) and [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) to power our GraphQL API:
 
