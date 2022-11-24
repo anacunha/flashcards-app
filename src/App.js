@@ -1,3 +1,6 @@
+import '@aws-amplify/ui-react/styles.css';
+import { withAuthenticator } from "@aws-amplify/ui-react";
+
 function App() {
   return (
     <div className="App">
@@ -5,4 +8,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
