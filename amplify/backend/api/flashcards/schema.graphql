@@ -1,4 +1,4 @@
-type Card @model @auth(rules: [{allow: owner}]) {
+type Card @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   front: String!
   back: String!
@@ -6,7 +6,7 @@ type Card @model @auth(rules: [{allow: owner}]) {
   owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
 }
 
-type Deck @model @auth(rules: [{allow: owner}]) {
+type Deck @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   name: String!
   cards: [Card!] @hasMany(indexName: "byDeck", fields: ["id"])
