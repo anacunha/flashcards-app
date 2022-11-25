@@ -24,7 +24,7 @@ Install the [AWS Amplify Javascript Library](https://github.com/aws-amplify/ampl
 npm install aws-amplify
 ```
 
-Configure Amplify on our frontend app `src/index.js` file so we can use it to interact with our backend services:
+[Configure Amplify](https://docs.amplify.aws/lib/client-configuration/configuring-amplify-categories/q/platform/js/) on our frontend app `src/index.js` file so we can use it to interact with our backend services:
 
 ```javascript
 import { Amplify } from 'aws-amplify';
@@ -43,10 +43,10 @@ amplify add auth
 Use the default configuration:
 
 <pre>
- Do you want to use the default authentication and security configuration? 
+ Do you want to use the default authentication and security configuration?
  <b> ❯ Default configuration </b>
-  Default configuration with Social Provider (Federation) 
-  Manual configuration 
+  Default configuration with Social Provider (Federation)
+  Manual configuration
   I want to learn more.
 </pre>
 
@@ -88,7 +88,7 @@ Select GraphQL
 <pre>
 ? Select from one of the below mentioned services: (Use arrow keys)
 <b> ❯ GraphQL </b>
-  REST 
+  REST
 </pre>
 Amplify will use [AWS AppSync](https://aws.amazon.com/appsync/) and [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) to power our GraphQL API:
 
@@ -117,19 +117,19 @@ Replace the content of the GraphQL schema file `amplify/backend/api/flashcards/s
 - To prevent an owner from reassigning their record to another user, we will set up [field-level authorization rules](https://docs.amplify.aws/cli/graphql/authorization-rules/#field-level-authorization-rules) to protect the `owner` field.
 
 ```graphql
-type Card @model @auth(rules: [{allow: owner}]) {
+type Card @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   front: String!
   back: String!
   deckId: ID! @index(name: "byDeck")
-  owner: String @auth(rules: [{allow: owner, operations: [read, delete]}])
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
 }
 
-type Deck @model @auth(rules: [{allow: owner}]) {
+type Deck @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   name: String!
   cards: [Card!] @hasMany(indexName: "byDeck", fields: ["id"])
-  owner: String @auth(rules: [{allow: owner, operations: [read, delete]}])
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
 }
 ```
 
