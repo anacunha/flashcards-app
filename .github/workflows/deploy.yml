@@ -40,9 +40,11 @@ jobs:
           REGION: ${{ secrets.AWS_REGION }}
           APP_ID: ${{ secrets.AMPLIFY_APP_ID }}
           PROJECT_NAME: ${{ env.AMPLIFY_APP_NAME }}
-
-      - name: Get Amplify App Status 🧪
-        run: amplify status
         
-      - name: Export Amplify Backend 💾
+      - name: Export Amplify Backend 🧪
         run: amplify export
+        
+      - name: Zip Amplify Export Folder 🗂🗜
+        run: |
+          zip --recurse-paths --quiet export-amplify-stack.zip export-amplify-stack
+          ls
