@@ -120,7 +120,9 @@ export const schema = {
                     "isArrayNullable": true,
                     "association": {
                         "connectionType": "HAS_MANY",
-                        "associatedWith": "deckId"
+                        "associatedWith": [
+                            "deckId"
+                        ]
                     }
                 },
                 "owner": {
@@ -178,5 +180,6 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
+    "codegenVersion": "3.3.2",
     "version": "c9e347627bf86be5b7c5714196290015"
 };

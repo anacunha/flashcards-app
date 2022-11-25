@@ -159,3 +159,35 @@ export const syncDecks = /* GraphQL */ `
     }
   }
 `;
+export const cardsByDeckId = /* GraphQL */ `
+  query CardsByDeckId(
+    $deckId: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelCardFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    cardsByDeckId(
+      deckId: $deckId
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        front
+        back
+        deckId
+        owner
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;

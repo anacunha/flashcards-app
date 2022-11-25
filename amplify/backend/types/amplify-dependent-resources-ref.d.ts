@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "auth": {
-        "flashcardsb4c37c28": {
+        "flashcardsad801687": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
@@ -14,13 +14,6 @@ export type AmplifyDependentResourcesAttributes = {
         "flashcards": {
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
-        }
-    },
-    "predictions": {
-        "speechGeneratorad58d821": {
-            "region": "string",
-            "language": "string",
-            "voice": "string"
         }
     }
 }

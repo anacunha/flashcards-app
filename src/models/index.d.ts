@@ -1,14 +1,16 @@
-import { ModelInit, MutableModel } from "@aws-amplify/datastore";
+import { ModelInit, MutableModel, __modelMeta__, ManagedIdentifier } from "@aws-amplify/datastore";
+// @ts-ignore
+import { LazyLoading, LazyLoadingDisabled, AsyncCollection } from "@aws-amplify/datastore";
 
-type CardMetaData = {
-  readOnlyFields: 'createdAt' | 'updatedAt';
-}
 
-type DeckMetaData = {
-  readOnlyFields: 'createdAt' | 'updatedAt';
-}
 
-export declare class Card {
+
+
+type EagerCard = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Card, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
   readonly id: string;
   readonly front: string;
   readonly back: string;
@@ -16,17 +18,56 @@ export declare class Card {
   readonly owner?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  constructor(init: ModelInit<Card, CardMetaData>);
-  static copyOf(source: Card, mutator: (draft: MutableModel<Card, CardMetaData>) => MutableModel<Card, CardMetaData> | void): Card;
 }
 
-export declare class Deck {
+type LazyCard = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Card, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly front: string;
+  readonly back: string;
+  readonly deckId: string;
+  readonly owner?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Card = LazyLoading extends LazyLoadingDisabled ? EagerCard : LazyCard
+
+export declare const Card: (new (init: ModelInit<Card>) => Card) & {
+  copyOf(source: Card, mutator: (draft: MutableModel<Card>) => MutableModel<Card> | void): Card;
+}
+
+type EagerDeck = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Deck, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
   readonly id: string;
   readonly name: string;
   readonly cards?: Card[] | null;
   readonly owner?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  constructor(init: ModelInit<Deck, DeckMetaData>);
-  static copyOf(source: Deck, mutator: (draft: MutableModel<Deck, DeckMetaData>) => MutableModel<Deck, DeckMetaData> | void): Deck;
+}
+
+type LazyDeck = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Deck, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly name: string;
+  readonly cards: AsyncCollection<Card>;
+  readonly owner?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Deck = LazyLoading extends LazyLoadingDisabled ? EagerDeck : LazyDeck
+
+export declare const Deck: (new (init: ModelInit<Deck>) => Deck) & {
+  copyOf(source: Deck, mutator: (draft: MutableModel<Deck>) => MutableModel<Deck> | void): Deck;
 }

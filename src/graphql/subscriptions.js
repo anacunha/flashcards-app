@@ -2,8 +2,11 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateCard = /* GraphQL */ `
-  subscription OnCreateCard($owner: String) {
-    onCreateCard(owner: $owner) {
+  subscription OnCreateCard(
+    $filter: ModelSubscriptionCardFilterInput
+    $owner: String
+  ) {
+    onCreateCard(filter: $filter, owner: $owner) {
       id
       front
       back
@@ -18,8 +21,11 @@ export const onCreateCard = /* GraphQL */ `
   }
 `;
 export const onUpdateCard = /* GraphQL */ `
-  subscription OnUpdateCard($owner: String) {
-    onUpdateCard(owner: $owner) {
+  subscription OnUpdateCard(
+    $filter: ModelSubscriptionCardFilterInput
+    $owner: String
+  ) {
+    onUpdateCard(filter: $filter, owner: $owner) {
       id
       front
       back
@@ -34,8 +40,11 @@ export const onUpdateCard = /* GraphQL */ `
   }
 `;
 export const onDeleteCard = /* GraphQL */ `
-  subscription OnDeleteCard($owner: String) {
-    onDeleteCard(owner: $owner) {
+  subscription OnDeleteCard(
+    $filter: ModelSubscriptionCardFilterInput
+    $owner: String
+  ) {
+    onDeleteCard(filter: $filter, owner: $owner) {
       id
       front
       back
@@ -50,8 +59,11 @@ export const onDeleteCard = /* GraphQL */ `
   }
 `;
 export const onCreateDeck = /* GraphQL */ `
-  subscription OnCreateDeck($owner: String) {
-    onCreateDeck(owner: $owner) {
+  subscription OnCreateDeck(
+    $filter: ModelSubscriptionDeckFilterInput
+    $owner: String
+  ) {
+    onCreateDeck(filter: $filter, owner: $owner) {
       id
       name
       cards {
@@ -80,8 +92,11 @@ export const onCreateDeck = /* GraphQL */ `
   }
 `;
 export const onUpdateDeck = /* GraphQL */ `
-  subscription OnUpdateDeck($owner: String) {
-    onUpdateDeck(owner: $owner) {
+  subscription OnUpdateDeck(
+    $filter: ModelSubscriptionDeckFilterInput
+    $owner: String
+  ) {
+    onUpdateDeck(filter: $filter, owner: $owner) {
       id
       name
       cards {
@@ -110,8 +125,11 @@ export const onUpdateDeck = /* GraphQL */ `
   }
 `;
 export const onDeleteDeck = /* GraphQL */ `
-  subscription OnDeleteDeck($owner: String) {
-    onDeleteDeck(owner: $owner) {
+  subscription OnDeleteDeck(
+    $filter: ModelSubscriptionDeckFilterInput
+    $owner: String
+  ) {
+    onDeleteDeck(filter: $filter, owner: $owner) {
       id
       name
       cards {

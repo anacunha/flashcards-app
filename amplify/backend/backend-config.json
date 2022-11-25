@@ -1,6 +1,6 @@
 {
   "auth": {
-    "flashcardsb4c37c28": {
+    "flashcardsad801687": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -32,7 +32,7 @@
       "dependsOn": [
         {
           "category": "auth",
-          "resourceName": "flashcardsb4c37c28",
+          "resourceName": "flashcardsad801687",
           "attributes": [
             "UserPoolId"
           ]
@@ -43,23 +43,12 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authflashcardsb4c37c28"
+              "userPoolId": "authflashcardsad801687"
             }
           },
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AWS_IAM"
-            }
-          ]
+          "additionalAuthenticationProviders": []
         }
       }
-    }
-  },
-  "predictions": {
-    "speechGeneratorad58d821": {
-      "providerPlugin": "awscloudformation",
-      "service": "Polly",
-      "convertType": "speechGenerator"
     }
   }
 }
