@@ -14,7 +14,7 @@ type EagerCard = {
   readonly id: string;
   readonly front: string;
   readonly back: string;
-  readonly deckID: string;
+  readonly deckId: string;
   readonly owner?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
@@ -28,7 +28,7 @@ type LazyCard = {
   readonly id: string;
   readonly front: string;
   readonly back: string;
-  readonly deckID: string;
+  readonly deckId: string;
   readonly owner?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;

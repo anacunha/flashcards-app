@@ -24,8 +24,8 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "deckID": {
-                    "name": "deckID",
+                "deckId": {
+                    "name": "deckId",
                     "isArray": false,
                     "type": "ID",
                     "isRequired": true,
@@ -67,7 +67,7 @@ export const schema = {
                     "properties": {
                         "name": "byDeck",
                         "fields": [
-                            "deckID"
+                            "deckId"
                         ]
                     }
                 },
@@ -121,7 +121,7 @@ export const schema = {
                     "association": {
                         "connectionType": "HAS_MANY",
                         "associatedWith": [
-                            "deckID"
+                            "deckId"
                         ]
                     }
                 },
@@ -181,5 +181,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.3.2",
-    "version": "9ca34cbda25f15e94f82614fee6f26b7"
+    "version": "c9e347627bf86be5b7c5714196290015"
 };

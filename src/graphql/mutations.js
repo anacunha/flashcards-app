@@ -10,7 +10,7 @@ export const createCard = /* GraphQL */ `
       id
       front
       back
-      deckID
+      deckId
       owner
       createdAt
       updatedAt
@@ -29,7 +29,7 @@ export const updateCard = /* GraphQL */ `
       id
       front
       back
-      deckID
+      deckId
       owner
       createdAt
       updatedAt
@@ -48,7 +48,7 @@ export const deleteCard = /* GraphQL */ `
       id
       front
       back
-      deckID
+      deckId
       owner
       createdAt
       updatedAt
@@ -71,7 +71,7 @@ export const createDeck = /* GraphQL */ `
           id
           front
           back
-          deckID
+          deckId
           owner
           createdAt
           updatedAt
@@ -104,7 +104,7 @@ export const updateDeck = /* GraphQL */ `
           id
           front
           back
-          deckID
+          deckId
           owner
           createdAt
           updatedAt
@@ -137,7 +137,7 @@ export const deleteDeck = /* GraphQL */ `
           id
           front
           back
-          deckID
+          deckId
           owner
           createdAt
           updatedAt

@@ -7,7 +7,7 @@ export const getCard = /* GraphQL */ `
       id
       front
       back
-      deckID
+      deckId
       owner
       createdAt
       updatedAt
@@ -28,7 +28,7 @@ export const listCards = /* GraphQL */ `
         id
         front
         back
-        deckID
+        deckId
         owner
         createdAt
         updatedAt
@@ -58,7 +58,7 @@ export const syncCards = /* GraphQL */ `
         id
         front
         back
-        deckID
+        deckId
         owner
         createdAt
         updatedAt
@@ -81,7 +81,7 @@ export const getDeck = /* GraphQL */ `
           id
           front
           back
-          deckID
+          deckId
           owner
           createdAt
           updatedAt
@@ -159,16 +159,16 @@ export const syncDecks = /* GraphQL */ `
     }
   }
 `;
-export const cardsByDeckID = /* GraphQL */ `
-  query CardsByDeckID(
-    $deckID: ID!
+export const cardsByDeckId = /* GraphQL */ `
+  query CardsByDeckId(
+    $deckId: ID!
     $sortDirection: ModelSortDirection
     $filter: ModelCardFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    cardsByDeckID(
-      deckID: $deckID
+    cardsByDeckId(
+      deckId: $deckId
       sortDirection: $sortDirection
       filter: $filter
       limit: $limit
@@ -178,7 +178,7 @@ export const cardsByDeckID = /* GraphQL */ `
         id
         front
         back
-        deckID
+        deckId
         owner
         createdAt
         updatedAt
