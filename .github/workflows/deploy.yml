@@ -26,7 +26,7 @@ jobs:
         env:
           APP_ID: ${{ secrets.AMPLIFY_APP_ID }}
 
-      - name: Install Amplify 💻
+      - name: Install Amplify 🧑‍💻
         run: |
           npm install -g @aws-amplify/cli
           echo "Amplify CLI version is $(amplify --version)"
@@ -41,5 +41,8 @@ jobs:
           APP_ID: ${{ secrets.AMPLIFY_APP_ID }}
           PROJECT_NAME: ${{ env.AMPLIFY_APP_NAME }}
 
-      - name: Test Amplify 🧪
+      - name: Get Amplify App Status 🧪
         run: amplify status
+        
+      - name: Export Amplify Backend 💾
+        run: amplify export
