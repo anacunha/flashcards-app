@@ -53,4 +53,4 @@ jobs:
           echo "BACKEND_S3_URL=$(aws s3 presign s3://${{ secrets.BACKEND_S3_BUCKET }}/export-amplify-stack.zip --expires-in 600)" >> $GITHUB_ENV
           
       - name: Test URL
-        run: echo ${{ env.BACKEND_S3_URL }}
+        run: echo "${{ env.BACKEND_S3_URL }}"
