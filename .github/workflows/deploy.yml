@@ -46,3 +46,10 @@ jobs:
         
       - name: Zip Amplify Export Folder 🗂🗜
         run: zip --recurse-paths --quiet export-amplify-stack.zip export-amplify-stack
+        
+      - name: Save Exported Backend to S3
+        run: |
+          aws s3 cp export-amplify-stack.zip s3://${{ secrets.BACKEND_S3_BUCKET }}
+          aws s3 presign s3://${{ secrets.BACKEND_S3_BUCKET }}/export-amplify-stack.zip --expires-in 600
+          aws s3 ls s3://${{ secrets.BACKEND_S3_BUCKET }}
+
