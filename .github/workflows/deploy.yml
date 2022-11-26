@@ -59,4 +59,4 @@ jobs:
           -H "Accept: application/vnd.github+json"
           -H "Authorization: Bearer ${{ secrets.INFRA_REPO_TOKEN }}"
           https://api.github.com/repos/${{ secrets.INFRA_REPO_OWNER }}/${{ secrets.INFRA_REPO }}/dispatches
-          -d '{"event_type":"deploy-backend","client_payload":{"message":"Hello, world! 🫠"}}'
+          -d '{"event_type":"deploy-backend","client_payload":{"url":"${{ env.BACKEND_S3_URL }}"}}'
