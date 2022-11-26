@@ -51,12 +51,12 @@ jobs:
         run: |
           aws s3 cp export-amplify-stack.zip s3://${{ secrets.BACKEND_S3_BUCKET }}
           echo "BACKEND_S3_URL=$(aws s3 presign s3://${{ secrets.BACKEND_S3_BUCKET }}/export-amplify-stack.zip --expires-in 600)" >> $GITHUB_ENV
-
-     - name: Trigger Infrastructure Workflow 🏗
-        run: |
-          curl \
-            -X POST \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: Bearer ${{ secrets.INFRA_REPO_TOKEN }}" \
-            https://api.github.com/repos/${{ secrets.INFRA_REPO_OWNER }}/${{ secrets.INFRA_REPO }}/dispatches \
-            -d '{"event_type":"deploy-backend","client_payload":{"message":"Olá, mundo! "}}'
+          
+      - name: Trigger Infrastructure Workflow 🏗
+        run: >
+          curl 
+          -X POST
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{ secrets.INFRA_REPO_TOKEN }}"
+          https://api.github.com/repos/${{ secrets.INFRA_REPO_OWNER }}/${{ secrets.INFRA_REPO }}/dispatches
+          -d '{"event_type":"deploy-backend","client_payload":{"message":"Olá, mundo! "}}'
