@@ -44,7 +44,7 @@ jobs:
       - name: Export Amplify Backend 🧪
         run: amplify export
 
-      - name: Zip Amplify Export Folder 🗂🗜
+      - name: Zip Amplify Export Folder 🗂
         run: zip --recurse-paths --quiet export-amplify-stack.zip export-amplify-stack
 
       - name: Save Exported Backend 💾
