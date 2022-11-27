@@ -42,15 +42,19 @@ jobs:
           PROJECT_NAME: ${{ env.AMPLIFY_APP_NAME }}
 
       - name: Export Amplify Backend 🧪
-        run: amplify export
+        run: amplify export --out ./
 
       - name: Zip Amplify Export Folder 🗂
-        run: zip --recurse-paths --quiet export-amplify-stack.zip export-amplify-stack
+        run: zip --recurse-paths --quiet amplify-export.zip amplify-export-$PROJECT_NAME
+        env:
+          PROJECT_NAME: ${{ env.AMPLIFY_APP_NAME }}
 
       - name: Save Exported Backend 💾
         run: |
-          aws s3 cp export-amplify-stack.zip s3://${{ secrets.BACKEND_S3_BUCKET }}
-          echo "BACKEND_S3_URL=$(aws s3 presign s3://${{ secrets.BACKEND_S3_BUCKET }}/export-amplify-stack.zip --expires-in 600)" >> $GITHUB_ENV
+          aws s3 cp amplify-export.zip s3://$BACKEND_S3_BUCKET
+          echo "BACKEND_S3_URL=$(aws s3 presign s3://$BACKEND_S3_BUCKET/amplify-export.zip --expires-in 600)" >> $GITHUB_ENV
+        env:
+          BACKEND_S3_BUCKET: ${{ secrets.BACKEND_S3_BUCKET }}
 
       - name: Trigger Infrastructure Workflow 🏗
         run: >
