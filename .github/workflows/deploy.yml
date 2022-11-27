@@ -45,7 +45,7 @@ jobs:
         run: amplify export --out ./
 
       - name: Zip Amplify Export Folder 🗂
-        run: zip --recurse-paths --quiet amplify-export.zip amplify-export-$PROJECT_NAME
+        run: zip -r amplify-export.zip amplify-export-$PROJECT_NAME
         env:
           PROJECT_NAME: ${{ env.AMPLIFY_APP_NAME }}
 
