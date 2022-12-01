@@ -5,7 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
+import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Divider, Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
@@ -16,9 +16,7 @@ export default function Ampligram(props) {
       gap="8px"
       direction="column"
       width="640px"
-      height="unset"
       justifyContent="center"
-      alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
@@ -27,27 +25,21 @@ export default function Ampligram(props) {
     >
       <Flex
         gap="16px"
-        direction="row"
-        width="unset"
-        height="unset"
         justifyContent="center"
         alignItems="center"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
         position="relative"
         padding="16px 16px 16px 16px"
         {...getOverrideProps(overrides, "Header")}
       >
         <Flex
           gap="16px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
+          width="100%"
           alignItems="center"
           grow="1"
-          shrink="1"
-          basis="0"
+          height="65px"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Profile")}
@@ -55,15 +47,10 @@ export default function Ampligram(props) {
           <Image
             width="65px"
             height="65px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
             shrink="0"
             position="relative"
             borderRadius="160px"
             padding="0px 0px 0px 0px"
-            objectFit="cover"
             {...getOverrideProps(overrides, "image29766764")}
           ></Image>
           <Text
@@ -73,14 +60,10 @@ export default function Ampligram(props) {
             color="rgba(13,26,38,1)"
             lineHeight="24px"
             textAlign="left"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
+            justifyContent="flex-start"
             letterSpacing="0.01px"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
             shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
@@ -91,12 +74,11 @@ export default function Ampligram(props) {
         </Flex>
         <Flex
           gap="10px"
-          direction="row"
-          width="unset"
-          height="unset"
+          width="fit-content"
           justifyContent="flex-end"
           alignItems="center"
           shrink="0"
+          height="24px"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Overflow")}
@@ -104,12 +86,8 @@ export default function Ampligram(props) {
           <View
             width="24px"
             height="24px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            overflow="hidden"
             shrink="0"
+            overflow="hidden"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Icon29766767")}
@@ -125,10 +103,6 @@ export default function Ampligram(props) {
                   fillRule: "nonzero",
                 },
               ]}
-              display="block"
-              gap="unset"
-              alignItems="unset"
-              justifyContent="unset"
               position="absolute"
               top="16.67%"
               bottom="16.67%"
@@ -140,40 +114,30 @@ export default function Ampligram(props) {
         </Flex>
       </Flex>
       <Image
-        width="unset"
         height="408px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
         position="relative"
         padding="0px 0px 0px 0px"
-        objectFit="cover"
         {...getOverrideProps(overrides, "image29766769")}
       ></Image>
       <Flex
         gap="16px"
-        direction="row"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
         alignItems="flex-start"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
         position="relative"
         padding="16px 16px 16px 16px"
         {...getOverrideProps(overrides, "Options")}
       >
         <Flex
           gap="24px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
+          width="fit-content"
           alignItems="flex-start"
           shrink="0"
+          height="24px"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Share")}
@@ -181,12 +145,8 @@ export default function Ampligram(props) {
           <MyIcon
             width="24px"
             height="24px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            overflow="hidden"
             shrink="0"
+            overflow="hidden"
             position="relative"
             padding="0px 0px 0px 0px"
             type="favorite_border"
@@ -195,12 +155,8 @@ export default function Ampligram(props) {
           <MyIcon
             width="24px"
             height="24px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            overflow="hidden"
             shrink="0"
+            overflow="hidden"
             position="relative"
             padding="0px 0px 0px 0px"
             type="chat-bubble-outline"
@@ -209,12 +165,8 @@ export default function Ampligram(props) {
           <MyIcon
             width="24px"
             height="24px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            overflow="hidden"
             shrink="0"
+            overflow="hidden"
             position="relative"
             padding="0px 0px 0px 0px"
             type="send"
@@ -223,14 +175,11 @@ export default function Ampligram(props) {
         </Flex>
         <Flex
           gap="10px"
-          direction="row"
-          width="unset"
-          height="unset"
+          width="100%"
           justifyContent="flex-end"
           alignItems="center"
           grow="1"
-          shrink="1"
-          basis="0"
+          height="24px"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Bookmark")}
@@ -238,12 +187,8 @@ export default function Ampligram(props) {
           <View
             width="24px"
             height="24px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            overflow="hidden"
             shrink="0"
+            overflow="hidden"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Icon29766776")}
@@ -259,10 +204,6 @@ export default function Ampligram(props) {
                   fillRule: "nonzero",
                 },
               ]}
-              display="block"
-              gap="unset"
-              alignItems="unset"
-              justifyContent="unset"
               position="absolute"
               top="12.5%"
               bottom="12.5%"
@@ -276,20 +217,20 @@ export default function Ampligram(props) {
       <Flex
         gap="8px"
         direction="column"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
-        alignItems="flex-start"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
         position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Body")}
       >
         <Divider
-          width="unset"
+          height="1px"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
+          position="relative"
+          padding="0px 0px 0px 0px"
           size="small"
           orientation="horizontal"
           {...getOverrideProps(overrides, "Divider")}
@@ -297,12 +238,9 @@ export default function Ampligram(props) {
         <Flex
           gap="8px"
           direction="column"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="flex-start"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="16px 16px 16px 16px"
           {...getOverrideProps(overrides, "Area")}
@@ -314,15 +252,12 @@ export default function Ampligram(props) {
             color="rgba(13,26,38,1)"
             lineHeight="20px"
             textAlign="left"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
+            justifyContent="flex-start"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
@@ -336,16 +271,13 @@ export default function Ampligram(props) {
             color="rgba(48,64,80,1)"
             lineHeight="24px"
             textAlign="left"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
+            justifyContent="flex-start"
             letterSpacing="0.01px"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
@@ -362,15 +294,12 @@ export default function Ampligram(props) {
             color="rgba(92,102,112,1)"
             lineHeight="24px"
             textAlign="left"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
+            justifyContent="flex-start"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"

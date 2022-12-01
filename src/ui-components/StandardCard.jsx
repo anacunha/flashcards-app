@@ -5,7 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
+import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function StandardCard(props) {
@@ -15,9 +15,7 @@ export default function StandardCard(props) {
       gap="0"
       direction="column"
       width="320px"
-      height="unset"
       justifyContent="center"
-      alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
@@ -25,28 +23,20 @@ export default function StandardCard(props) {
       {...getOverrideProps(overrides, "StandardCard")}
     >
       <Image
-        width="unset"
         height="160px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
         position="relative"
         padding="0px 0px 0px 0px"
-        objectFit="cover"
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
         gap="16px"
         direction="column"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
-        alignItems="flex-start"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
         position="relative"
         padding="16px 16px 16px 16px"
         {...getOverrideProps(overrides, "Card Area")}
@@ -54,12 +44,9 @@ export default function StandardCard(props) {
         <Flex
           gap="8px"
           direction="column"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="flex-start"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Text Group")}
@@ -71,15 +58,12 @@ export default function StandardCard(props) {
             color="rgba(13,26,38,1)"
             lineHeight="20px"
             textAlign="left"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
+            justifyContent="flex-start"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
@@ -93,16 +77,13 @@ export default function StandardCard(props) {
             color="rgba(13,26,38,1)"
             lineHeight="24px"
             textAlign="left"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
+            justifyContent="flex-start"
             letterSpacing="0.01px"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
@@ -116,15 +97,12 @@ export default function StandardCard(props) {
             color="rgba(48,64,80,1)"
             lineHeight="24px"
             textAlign="left"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
+            justifyContent="flex-start"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"

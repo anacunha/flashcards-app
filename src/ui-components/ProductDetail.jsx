@@ -5,7 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
+import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import {
   Button,
@@ -20,10 +20,7 @@ export default function ProductDetail(props) {
   return (
     <Flex
       gap="24px"
-      direction="row"
       width="1160px"
-      height="unset"
-      justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
@@ -33,40 +30,28 @@ export default function ProductDetail(props) {
       <Flex
         gap="32px"
         direction="column"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
-        alignItems="flex-start"
+        width="100%"
         grow="1"
-        shrink="1"
-        basis="0"
+        height="1072px"
         position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Frame 401")}
       >
         <Image
-          width="unset"
           height="480px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
-          objectFit="cover"
           {...getOverrideProps(overrides, "image")}
         ></Image>
         <Flex
           gap="32px"
           direction="column"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="flex-start"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Frame 6")}
@@ -74,12 +59,9 @@ export default function ProductDetail(props) {
           <Flex
             gap="8px"
             direction="column"
-            width="unset"
-            height="unset"
-            justifyContent="flex-start"
-            alignItems="flex-start"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Frame 729766954")}
@@ -87,19 +69,16 @@ export default function ProductDetail(props) {
             <Text
               fontFamily="Inter"
               fontSize="24px"
-              fontWeight="600"
+              fontWeight="400"
               color="rgba(13,26,38,1)"
               lineHeight="30px"
               textAlign="left"
-              display="block"
+              display="flex"
               direction="column"
-              justifyContent="unset"
-              width="unset"
-              height="unset"
-              gap="unset"
-              alignItems="unset"
+              justifyContent="flex-start"
               shrink="0"
               alignSelf="stretch"
+              objectFit="cover"
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
@@ -113,16 +92,13 @@ export default function ProductDetail(props) {
               color="rgba(92,102,112,1)"
               lineHeight="24px"
               textAlign="left"
-              display="block"
+              display="flex"
               direction="column"
-              justifyContent="unset"
+              justifyContent="flex-start"
               letterSpacing="0.01px"
-              width="unset"
-              height="unset"
-              gap="unset"
-              alignItems="unset"
               shrink="0"
               alignSelf="stretch"
+              objectFit="cover"
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
@@ -134,9 +110,12 @@ export default function ProductDetail(props) {
             ></Text>
           </Flex>
           <Divider
-            width="unset"
+            height="1px"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
+            position="relative"
+            padding="0px 0px 0px 0px"
             size="small"
             orientation="horizontal"
             {...getOverrideProps(overrides, "Divider29766957")}
@@ -144,12 +123,9 @@ export default function ProductDetail(props) {
           <Flex
             gap="8px"
             direction="column"
-            width="unset"
-            height="unset"
-            justifyContent="flex-start"
-            alignItems="flex-start"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Frame 729766958")}
@@ -157,19 +133,16 @@ export default function ProductDetail(props) {
             <Text
               fontFamily="Inter"
               fontSize="16px"
-              fontWeight="800"
+              fontWeight="400"
               color="rgba(13,26,38,1)"
               lineHeight="20px"
               textAlign="left"
-              display="block"
+              display="flex"
               direction="column"
-              justifyContent="unset"
-              width="unset"
-              height="unset"
-              gap="unset"
-              alignItems="unset"
+              justifyContent="flex-start"
               shrink="0"
               alignSelf="stretch"
+              objectFit="cover"
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
@@ -183,16 +156,13 @@ export default function ProductDetail(props) {
               color="rgba(92,102,112,1)"
               lineHeight="24px"
               textAlign="left"
-              display="block"
+              display="flex"
               direction="column"
-              justifyContent="unset"
+              justifyContent="flex-start"
               letterSpacing="0.01px"
-              width="unset"
-              height="unset"
-              gap="unset"
-              alignItems="unset"
               shrink="0"
               alignSelf="stretch"
+              objectFit="cover"
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
@@ -204,9 +174,12 @@ export default function ProductDetail(props) {
             ></Text>
           </Flex>
           <Divider
-            width="unset"
+            height="1px"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
+            position="relative"
+            padding="0px 0px 0px 0px"
             size="small"
             orientation="horizontal"
             {...getOverrideProps(overrides, "Divider29766961")}
@@ -214,12 +187,9 @@ export default function ProductDetail(props) {
           <Flex
             gap="8px"
             direction="column"
-            width="unset"
-            height="unset"
-            justifyContent="flex-start"
-            alignItems="flex-start"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Frame 729766962")}
@@ -227,19 +197,16 @@ export default function ProductDetail(props) {
             <Text
               fontFamily="Inter"
               fontSize="16px"
-              fontWeight="800"
+              fontWeight="400"
               color="rgba(13,26,38,1)"
               lineHeight="20px"
               textAlign="left"
-              display="block"
+              display="flex"
               direction="column"
-              justifyContent="unset"
-              width="unset"
-              height="unset"
-              gap="unset"
-              alignItems="unset"
+              justifyContent="flex-start"
               shrink="0"
               alignSelf="stretch"
+              objectFit="cover"
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
@@ -253,16 +220,13 @@ export default function ProductDetail(props) {
               color="rgba(92,102,112,1)"
               lineHeight="24px"
               textAlign="left"
-              display="block"
+              display="flex"
               direction="column"
-              justifyContent="unset"
+              justifyContent="flex-start"
               letterSpacing="0.01px"
-              width="unset"
-              height="unset"
-              gap="unset"
-              alignItems="unset"
               shrink="0"
               alignSelf="stretch"
+              objectFit="cover"
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
@@ -278,6 +242,8 @@ export default function ProductDetail(props) {
       <Divider
         height="1098px"
         shrink="0"
+        position="relative"
+        padding="0px 0px 0px 0px"
         size="small"
         orientation="vertical"
         {...getOverrideProps(overrides, "Divider29766965")}
@@ -285,11 +251,9 @@ export default function ProductDetail(props) {
       <Flex
         gap="24px"
         direction="column"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
-        alignItems="flex-start"
+        width="fit-content"
         shrink="0"
+        height="331px"
         position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Frame 402")}
@@ -297,17 +261,13 @@ export default function ProductDetail(props) {
         <Text
           fontFamily="Inter"
           fontSize="24px"
-          fontWeight="600"
+          fontWeight="400"
           color="rgba(13,26,38,1)"
           lineHeight="30px"
           textAlign="left"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
+          justifyContent="flex-start"
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -317,10 +277,7 @@ export default function ProductDetail(props) {
         ></Text>
         <Flex
           gap="16px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
+          width="fit-content"
           alignItems="flex-start"
           shrink="0"
           position="relative"
@@ -328,7 +285,14 @@ export default function ProductDetail(props) {
           {...getOverrideProps(overrides, "Frame 27")}
         >
           <Rating
+            display="flex"
+            gap="8px"
+            width="fit-content"
+            alignItems="center"
             shrink="0"
+            height="24px"
+            position="relative"
+            padding="0px 0px 0px 0px"
             size="default"
             {...getOverrideProps(overrides, "Rating")}
           ></Rating>
@@ -339,14 +303,10 @@ export default function ProductDetail(props) {
             color="rgba(13,26,38,1)"
             lineHeight="18px"
             textAlign="left"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
+            justifyContent="flex-start"
             textDecoration="underline"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
             shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
@@ -359,19 +319,19 @@ export default function ProductDetail(props) {
           padding="0px 0px 0px 0px"
           width="371px"
           height="229px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
           shrink="0"
           position="relative"
           {...getOverrideProps(overrides, "Group 27")}
         >
           <Button
-            width="371px"
+            display="flex"
+            gap="0"
             position="absolute"
             top="189px"
             left="0px"
+            width="371px"
+            justifyContent="center"
+            alignItems="center"
             size="default"
             isDisabled={false}
             variation="primary"
@@ -380,20 +340,23 @@ export default function ProductDetail(props) {
           ></Button>
           <Flex
             gap="24px"
-            direction="row"
-            width="unset"
-            height="unset"
-            justifyContent="flex-start"
-            alignItems="flex-start"
             position="absolute"
             top="40px"
             left="0px"
+            alignItems="flex-start"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Frame 2829766973")}
           >
             <Button
+              display="flex"
+              gap="0"
               width="75px"
+              justifyContent="center"
+              alignItems="center"
               shrink="0"
+              height="46px"
+              position="relative"
+              padding="8px 16px 8px 16px"
               size="large"
               isDisabled={true}
               variation="primary"
@@ -401,8 +364,14 @@ export default function ProductDetail(props) {
               {...getOverrideProps(overrides, "Button29766974")}
             ></Button>
             <Button
+              display="flex"
+              gap="0"
               width="75px"
+              justifyContent="center"
+              alignItems="center"
               shrink="0"
+              height="46px"
+              position="relative"
               size="large"
               isDisabled={false}
               variation="primary"
@@ -410,8 +379,14 @@ export default function ProductDetail(props) {
               {...getOverrideProps(overrides, "Button29766975")}
             ></Button>
             <Button
+              display="flex"
+              gap="0"
               width="74px"
+              justifyContent="center"
+              alignItems="center"
               shrink="0"
+              height="46px"
+              position="relative"
               size="large"
               isDisabled={false}
               variation="primary"
@@ -419,8 +394,14 @@ export default function ProductDetail(props) {
               {...getOverrideProps(overrides, "Button29766976")}
             ></Button>
             <Button
+              display="flex"
+              gap="0"
               width="75px"
+              justifyContent="center"
+              alignItems="center"
               shrink="0"
+              height="46px"
+              position="relative"
               size="large"
               isDisabled={false}
               variation="primary"
@@ -430,21 +411,22 @@ export default function ProductDetail(props) {
           </Flex>
           <Flex
             gap="24px"
-            direction="row"
-            width="unset"
-            height="unset"
-            justifyContent="flex-start"
-            alignItems="flex-start"
             position="absolute"
             top="112px"
             left="0px"
+            alignItems="flex-start"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Frame 2829766978")}
           >
             <Button
+              display="flex"
               gap="24px"
               width="75px"
+              justifyContent="center"
+              alignItems="center"
               shrink="0"
+              height="46px"
+              position="relative"
               size="large"
               isDisabled={false}
               variation="primary"
@@ -452,9 +434,14 @@ export default function ProductDetail(props) {
               {...getOverrideProps(overrides, "Button29766979")}
             ></Button>
             <Button
+              display="flex"
               gap="24px"
               width="75px"
+              justifyContent="center"
+              alignItems="center"
               shrink="0"
+              height="46px"
+              position="relative"
               size="large"
               isDisabled={false}
               variation="primary"
@@ -462,9 +449,14 @@ export default function ProductDetail(props) {
               {...getOverrideProps(overrides, "Button29766980")}
             ></Button>
             <Button
+              display="flex"
               gap="24px"
               width="74px"
+              justifyContent="center"
+              alignItems="center"
               shrink="0"
+              height="46px"
+              position="relative"
               size="large"
               isDisabled={false}
               variation="primary"
@@ -472,9 +464,14 @@ export default function ProductDetail(props) {
               {...getOverrideProps(overrides, "Button29766981")}
             ></Button>
             <Button
+              display="flex"
               gap="24px"
               width="75px"
+              justifyContent="center"
+              alignItems="center"
               shrink="0"
+              height="46px"
+              position="relative"
               size="large"
               isDisabled={false}
               variation="primary"
@@ -489,14 +486,10 @@ export default function ProductDetail(props) {
             color="rgba(13,26,38,1)"
             lineHeight="18px"
             textAlign="right"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
+            justifyContent="flex-start"
             textDecoration="underline"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
             position="absolute"
             top="3px"
             left="300px"
@@ -512,14 +505,10 @@ export default function ProductDetail(props) {
             color="rgba(48,64,80,1)"
             lineHeight="24px"
             textAlign="left"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
+            justifyContent="flex-start"
             letterSpacing="0.01px"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
             position="absolute"
             top="0px"
             left="0px"

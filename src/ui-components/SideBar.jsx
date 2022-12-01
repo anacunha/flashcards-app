@@ -5,7 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
+import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Divider, Flex, Icon, Text, View } from "@aws-amplify/ui-react";
 export default function SideBar(props) {
@@ -13,10 +13,8 @@ export default function SideBar(props) {
   return (
     <Flex
       gap="10px"
-      direction="row"
       width="385px"
       height="762px"
-      justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
       padding="32px 0px 32px 0px"
@@ -27,13 +25,8 @@ export default function SideBar(props) {
       <Flex
         gap="32px"
         direction="column"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
-        alignItems="flex-start"
+        width="100%"
         grow="1"
-        shrink="1"
-        basis="0"
         alignSelf="stretch"
         position="relative"
         padding="0px 0px 0px 0px"
@@ -42,27 +35,19 @@ export default function SideBar(props) {
         <Flex
           gap="32px"
           direction="column"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="flex-start"
+          height="585px"
           grow="1"
-          shrink="1"
-          basis="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 32px 0px 32px"
           {...getOverrideProps(overrides, "Frame 32129767088")}
         >
           <View
-            width="unset"
             height="80px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
             position="relative"
             padding="0px 0px 0px 0px"
             backgroundColor="rgba(233,235,236,1)"
@@ -71,10 +56,7 @@ export default function SideBar(props) {
           <Flex
             gap="16px"
             direction="column"
-            width="unset"
-            height="unset"
-            justifyContent="flex-start"
-            alignItems="flex-start"
+            width="fit-content"
             shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
@@ -87,13 +69,9 @@ export default function SideBar(props) {
               color="rgba(13,26,38,1)"
               lineHeight="24px"
               textAlign="left"
-              display="block"
+              display="flex"
               direction="column"
-              justifyContent="unset"
-              width="unset"
-              height="unset"
-              gap="unset"
-              alignItems="unset"
+              justifyContent="flex-start"
               shrink="0"
               position="relative"
               padding="0px 0px 0px 0px"
@@ -103,10 +81,7 @@ export default function SideBar(props) {
             ></Text>
             <Flex
               gap="16px"
-              direction="row"
-              width="unset"
-              height="unset"
-              justifyContent="flex-start"
+              width="fit-content"
               alignItems="center"
               shrink="0"
               position="relative"
@@ -116,12 +91,8 @@ export default function SideBar(props) {
               <View
                 width="24px"
                 height="24px"
-                display="block"
-                gap="unset"
-                alignItems="unset"
-                justifyContent="unset"
-                overflow="hidden"
                 shrink="0"
+                overflow="hidden"
                 position="relative"
                 padding="0px 0px 0px 0px"
                 {...getOverrideProps(overrides, "Icon29767093")}
@@ -137,10 +108,6 @@ export default function SideBar(props) {
                       fillRule: "nonzero",
                     },
                   ]}
-                  display="block"
-                  gap="unset"
-                  alignItems="unset"
-                  justifyContent="unset"
                   position="absolute"
                   top="12.5%"
                   bottom="16.67%"
@@ -156,14 +123,10 @@ export default function SideBar(props) {
                 color="rgba(13,26,38,1)"
                 lineHeight="24px"
                 textAlign="left"
-                display="block"
+                display="flex"
                 direction="column"
-                justifyContent="unset"
+                justifyContent="flex-start"
                 letterSpacing="0.01px"
-                width="unset"
-                height="unset"
-                gap="unset"
-                alignItems="unset"
                 shrink="0"
                 position="relative"
                 padding="0px 0px 0px 0px"
@@ -174,10 +137,7 @@ export default function SideBar(props) {
             </Flex>
             <Flex
               gap="16px"
-              direction="row"
-              width="unset"
-              height="unset"
-              justifyContent="flex-start"
+              width="fit-content"
               alignItems="center"
               shrink="0"
               position="relative"
@@ -187,12 +147,8 @@ export default function SideBar(props) {
               <View
                 width="24px"
                 height="24px"
-                display="block"
-                gap="unset"
-                alignItems="unset"
-                justifyContent="unset"
-                overflow="hidden"
                 shrink="0"
+                overflow="hidden"
                 position="relative"
                 padding="0px 0px 0px 0px"
                 {...getOverrideProps(overrides, "Icon29767097")}
@@ -208,10 +164,6 @@ export default function SideBar(props) {
                       fillRule: "nonzero",
                     },
                   ]}
-                  display="block"
-                  gap="unset"
-                  alignItems="unset"
-                  justifyContent="unset"
                   position="absolute"
                   top="12.5%"
                   bottom="16.67%"
@@ -227,14 +179,10 @@ export default function SideBar(props) {
                 color="rgba(13,26,38,1)"
                 lineHeight="24px"
                 textAlign="left"
-                display="block"
+                display="flex"
                 direction="column"
-                justifyContent="unset"
+                justifyContent="flex-start"
                 letterSpacing="0.01px"
-                width="unset"
-                height="unset"
-                gap="unset"
-                alignItems="unset"
                 shrink="0"
                 position="relative"
                 padding="0px 0px 0px 0px"
@@ -247,10 +195,7 @@ export default function SideBar(props) {
           <Flex
             gap="16px"
             direction="column"
-            width="unset"
-            height="unset"
-            justifyContent="flex-start"
-            alignItems="flex-start"
+            width="fit-content"
             shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
@@ -263,13 +208,9 @@ export default function SideBar(props) {
               color="rgba(13,26,38,1)"
               lineHeight="24px"
               textAlign="left"
-              display="block"
+              display="flex"
               direction="column"
-              justifyContent="unset"
-              width="unset"
-              height="unset"
-              gap="unset"
-              alignItems="unset"
+              justifyContent="flex-start"
               shrink="0"
               position="relative"
               padding="0px 0px 0px 0px"
@@ -280,10 +221,7 @@ export default function SideBar(props) {
             <Flex
               gap="16px"
               direction="column"
-              width="unset"
-              height="unset"
-              justifyContent="flex-start"
-              alignItems="flex-start"
+              width="fit-content"
               shrink="0"
               position="relative"
               padding="0px 0px 0px 0px"
@@ -291,10 +229,7 @@ export default function SideBar(props) {
             >
               <Flex
                 gap="16px"
-                direction="row"
-                width="unset"
-                height="unset"
-                justifyContent="flex-start"
+                width="fit-content"
                 alignItems="center"
                 shrink="0"
                 position="relative"
@@ -304,12 +239,8 @@ export default function SideBar(props) {
                 <View
                   width="24px"
                   height="24px"
-                  display="block"
-                  gap="unset"
-                  alignItems="unset"
-                  justifyContent="unset"
-                  overflow="hidden"
                   shrink="0"
+                  overflow="hidden"
                   position="relative"
                   padding="0px 0px 0px 0px"
                   {...getOverrideProps(overrides, "Icon29767104")}
@@ -325,10 +256,6 @@ export default function SideBar(props) {
                         fillRule: "nonzero",
                       },
                     ]}
-                    display="block"
-                    gap="unset"
-                    alignItems="unset"
-                    justifyContent="unset"
                     position="absolute"
                     top="12.5%"
                     bottom="16.67%"
@@ -344,14 +271,10 @@ export default function SideBar(props) {
                   color="rgba(13,26,38,1)"
                   lineHeight="24px"
                   textAlign="left"
-                  display="block"
+                  display="flex"
                   direction="column"
-                  justifyContent="unset"
+                  justifyContent="flex-start"
                   letterSpacing="0.01px"
-                  width="unset"
-                  height="unset"
-                  gap="unset"
-                  alignItems="unset"
                   shrink="0"
                   position="relative"
                   padding="0px 0px 0px 0px"
@@ -362,10 +285,7 @@ export default function SideBar(props) {
               </Flex>
               <Flex
                 gap="16px"
-                direction="row"
-                width="unset"
-                height="unset"
-                justifyContent="flex-start"
+                width="fit-content"
                 alignItems="center"
                 shrink="0"
                 position="relative"
@@ -375,12 +295,8 @@ export default function SideBar(props) {
                 <View
                   width="24px"
                   height="24px"
-                  display="block"
-                  gap="unset"
-                  alignItems="unset"
-                  justifyContent="unset"
-                  overflow="hidden"
                   shrink="0"
+                  overflow="hidden"
                   position="relative"
                   padding="0px 0px 0px 0px"
                   {...getOverrideProps(overrides, "Icon29767108")}
@@ -396,10 +312,6 @@ export default function SideBar(props) {
                         fillRule: "nonzero",
                       },
                     ]}
-                    display="block"
-                    gap="unset"
-                    alignItems="unset"
-                    justifyContent="unset"
                     position="absolute"
                     top="12.5%"
                     bottom="16.67%"
@@ -415,14 +327,10 @@ export default function SideBar(props) {
                   color="rgba(13,26,38,1)"
                   lineHeight="24px"
                   textAlign="left"
-                  display="block"
+                  display="flex"
                   direction="column"
-                  justifyContent="unset"
+                  justifyContent="flex-start"
                   letterSpacing="0.01px"
-                  width="unset"
-                  height="unset"
-                  gap="unset"
-                  alignItems="unset"
                   shrink="0"
                   position="relative"
                   padding="0px 0px 0px 0px"
@@ -433,10 +341,7 @@ export default function SideBar(props) {
               </Flex>
               <Flex
                 gap="16px"
-                direction="row"
-                width="unset"
-                height="unset"
-                justifyContent="flex-start"
+                width="fit-content"
                 alignItems="center"
                 shrink="0"
                 position="relative"
@@ -446,12 +351,8 @@ export default function SideBar(props) {
                 <View
                   width="24px"
                   height="24px"
-                  display="block"
-                  gap="unset"
-                  alignItems="unset"
-                  justifyContent="unset"
-                  overflow="hidden"
                   shrink="0"
+                  overflow="hidden"
                   position="relative"
                   padding="0px 0px 0px 0px"
                   {...getOverrideProps(overrides, "Icon29767112")}
@@ -467,10 +368,6 @@ export default function SideBar(props) {
                         fillRule: "nonzero",
                       },
                     ]}
-                    display="block"
-                    gap="unset"
-                    alignItems="unset"
-                    justifyContent="unset"
                     position="absolute"
                     top="12.5%"
                     bottom="16.67%"
@@ -486,14 +383,10 @@ export default function SideBar(props) {
                   color="rgba(13,26,38,1)"
                   lineHeight="24px"
                   textAlign="left"
-                  display="block"
+                  display="flex"
                   direction="column"
-                  justifyContent="unset"
+                  justifyContent="flex-start"
                   letterSpacing="0.01px"
-                  width="unset"
-                  height="unset"
-                  gap="unset"
-                  alignItems="unset"
                   shrink="0"
                   position="relative"
                   padding="0px 0px 0px 0px"
@@ -504,10 +397,7 @@ export default function SideBar(props) {
               </Flex>
               <Flex
                 gap="16px"
-                direction="row"
-                width="unset"
-                height="unset"
-                justifyContent="flex-start"
+                width="fit-content"
                 alignItems="center"
                 shrink="0"
                 position="relative"
@@ -517,12 +407,8 @@ export default function SideBar(props) {
                 <View
                   width="24px"
                   height="24px"
-                  display="block"
-                  gap="unset"
-                  alignItems="unset"
-                  justifyContent="unset"
-                  overflow="hidden"
                   shrink="0"
+                  overflow="hidden"
                   position="relative"
                   padding="0px 0px 0px 0px"
                   {...getOverrideProps(overrides, "Icon29767116")}
@@ -538,10 +424,6 @@ export default function SideBar(props) {
                         fillRule: "nonzero",
                       },
                     ]}
-                    display="block"
-                    gap="unset"
-                    alignItems="unset"
-                    justifyContent="unset"
                     position="absolute"
                     top="12.5%"
                     bottom="16.67%"
@@ -557,14 +439,10 @@ export default function SideBar(props) {
                   color="rgba(13,26,38,1)"
                   lineHeight="24px"
                   textAlign="left"
-                  display="block"
+                  display="flex"
                   direction="column"
-                  justifyContent="unset"
+                  justifyContent="flex-start"
                   letterSpacing="0.01px"
-                  width="unset"
-                  height="unset"
-                  gap="unset"
-                  alignItems="unset"
                   shrink="0"
                   position="relative"
                   padding="0px 0px 0px 0px"
@@ -575,10 +453,7 @@ export default function SideBar(props) {
               </Flex>
               <Flex
                 gap="16px"
-                direction="row"
-                width="unset"
-                height="unset"
-                justifyContent="flex-start"
+                width="fit-content"
                 alignItems="center"
                 shrink="0"
                 position="relative"
@@ -588,12 +463,8 @@ export default function SideBar(props) {
                 <View
                   width="24px"
                   height="24px"
-                  display="block"
-                  gap="unset"
-                  alignItems="unset"
-                  justifyContent="unset"
-                  overflow="hidden"
                   shrink="0"
+                  overflow="hidden"
                   position="relative"
                   padding="0px 0px 0px 0px"
                   {...getOverrideProps(overrides, "Icon29767120")}
@@ -609,10 +480,6 @@ export default function SideBar(props) {
                         fillRule: "nonzero",
                       },
                     ]}
-                    display="block"
-                    gap="unset"
-                    alignItems="unset"
-                    justifyContent="unset"
                     position="absolute"
                     top="12.5%"
                     bottom="16.67%"
@@ -628,14 +495,10 @@ export default function SideBar(props) {
                   color="rgba(13,26,38,1)"
                   lineHeight="24px"
                   textAlign="left"
-                  display="block"
+                  display="flex"
                   direction="column"
-                  justifyContent="unset"
+                  justifyContent="flex-start"
                   letterSpacing="0.01px"
-                  width="unset"
-                  height="unset"
-                  gap="unset"
-                  alignItems="unset"
                   shrink="0"
                   position="relative"
                   padding="0px 0px 0px 0px"
@@ -646,10 +509,7 @@ export default function SideBar(props) {
               </Flex>
               <Flex
                 gap="16px"
-                direction="row"
-                width="unset"
-                height="unset"
-                justifyContent="flex-start"
+                width="fit-content"
                 alignItems="center"
                 shrink="0"
                 position="relative"
@@ -659,12 +519,8 @@ export default function SideBar(props) {
                 <View
                   width="24px"
                   height="24px"
-                  display="block"
-                  gap="unset"
-                  alignItems="unset"
-                  justifyContent="unset"
-                  overflow="hidden"
                   shrink="0"
+                  overflow="hidden"
                   position="relative"
                   padding="0px 0px 0px 0px"
                   {...getOverrideProps(overrides, "Icon29767124")}
@@ -680,10 +536,6 @@ export default function SideBar(props) {
                         fillRule: "nonzero",
                       },
                     ]}
-                    display="block"
-                    gap="unset"
-                    alignItems="unset"
-                    justifyContent="unset"
                     position="absolute"
                     top="12.5%"
                     bottom="16.67%"
@@ -699,14 +551,10 @@ export default function SideBar(props) {
                   color="rgba(13,26,38,1)"
                   lineHeight="24px"
                   textAlign="left"
-                  display="block"
+                  display="flex"
                   direction="column"
-                  justifyContent="unset"
+                  justifyContent="flex-start"
                   letterSpacing="0.01px"
-                  width="unset"
-                  height="unset"
-                  gap="unset"
-                  alignItems="unset"
                   shrink="0"
                   position="relative"
                   padding="0px 0px 0px 0px"
@@ -717,10 +565,7 @@ export default function SideBar(props) {
               </Flex>
               <Flex
                 gap="16px"
-                direction="row"
-                width="unset"
-                height="unset"
-                justifyContent="flex-start"
+                width="fit-content"
                 alignItems="center"
                 shrink="0"
                 position="relative"
@@ -730,12 +575,8 @@ export default function SideBar(props) {
                 <View
                   width="24px"
                   height="24px"
-                  display="block"
-                  gap="unset"
-                  alignItems="unset"
-                  justifyContent="unset"
-                  overflow="hidden"
                   shrink="0"
+                  overflow="hidden"
                   position="relative"
                   padding="0px 0px 0px 0px"
                   {...getOverrideProps(overrides, "Icon29767128")}
@@ -751,10 +592,6 @@ export default function SideBar(props) {
                         fillRule: "nonzero",
                       },
                     ]}
-                    display="block"
-                    gap="unset"
-                    alignItems="unset"
-                    justifyContent="unset"
                     position="absolute"
                     top="12.5%"
                     bottom="16.67%"
@@ -770,14 +607,10 @@ export default function SideBar(props) {
                   color="rgba(13,26,38,1)"
                   lineHeight="24px"
                   textAlign="left"
-                  display="block"
+                  display="flex"
                   direction="column"
-                  justifyContent="unset"
+                  justifyContent="flex-start"
                   letterSpacing="0.01px"
-                  width="unset"
-                  height="unset"
-                  gap="unset"
-                  alignItems="unset"
                   shrink="0"
                   position="relative"
                   padding="0px 0px 0px 0px"
@@ -788,10 +621,7 @@ export default function SideBar(props) {
               </Flex>
               <Flex
                 gap="16px"
-                direction="row"
-                width="unset"
-                height="unset"
-                justifyContent="flex-start"
+                width="fit-content"
                 alignItems="center"
                 shrink="0"
                 position="relative"
@@ -801,12 +631,8 @@ export default function SideBar(props) {
                 <View
                   width="24px"
                   height="24px"
-                  display="block"
-                  gap="unset"
-                  alignItems="unset"
-                  justifyContent="unset"
-                  overflow="hidden"
                   shrink="0"
+                  overflow="hidden"
                   position="relative"
                   padding="0px 0px 0px 0px"
                   {...getOverrideProps(overrides, "Icon29767132")}
@@ -822,10 +648,6 @@ export default function SideBar(props) {
                         fillRule: "nonzero",
                       },
                     ]}
-                    display="block"
-                    gap="unset"
-                    alignItems="unset"
-                    justifyContent="unset"
                     position="absolute"
                     top="12.5%"
                     bottom="16.67%"
@@ -841,14 +663,10 @@ export default function SideBar(props) {
                   color="rgba(13,26,38,1)"
                   lineHeight="24px"
                   textAlign="left"
-                  display="block"
+                  display="flex"
                   direction="column"
-                  justifyContent="unset"
+                  justifyContent="flex-start"
                   letterSpacing="0.01px"
-                  width="unset"
-                  height="unset"
-                  gap="unset"
-                  alignItems="unset"
                   shrink="0"
                   position="relative"
                   padding="0px 0px 0px 0px"
@@ -863,10 +681,9 @@ export default function SideBar(props) {
         <Flex
           gap="32px"
           direction="column"
-          width="unset"
+          width="fit-content"
           height="81px"
           justifyContent="flex-end"
-          alignItems="flex-start"
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -874,17 +691,17 @@ export default function SideBar(props) {
         >
           <Divider
             width="385px"
+            height="1px"
             shrink="0"
+            position="relative"
+            padding="0px 0px 0px 0px"
             size="small"
             orientation="horizontal"
             {...getOverrideProps(overrides, "Divider")}
           ></Divider>
           <Flex
             gap="129px"
-            direction="row"
             width="385px"
-            height="unset"
-            justifyContent="flex-start"
             alignItems="center"
             shrink="0"
             position="relative"
@@ -893,14 +710,10 @@ export default function SideBar(props) {
           >
             <Flex
               gap="16px"
-              direction="row"
-              width="unset"
-              height="unset"
-              justifyContent="flex-start"
+              width="100%"
               alignItems="center"
               grow="1"
-              shrink="1"
-              basis="0"
+              height="48px"
               position="relative"
               padding="0px 0px 0px 0px"
               {...getOverrideProps(overrides, "Frame 415")}
@@ -908,10 +721,6 @@ export default function SideBar(props) {
               <View
                 width="48px"
                 height="48px"
-                display="block"
-                gap="unset"
-                alignItems="unset"
-                justifyContent="unset"
                 shrink="0"
                 position="relative"
                 borderRadius="40px"
@@ -923,10 +732,8 @@ export default function SideBar(props) {
                 gap="0"
                 direction="column"
                 width="100px"
-                height="unset"
-                justifyContent="flex-start"
-                alignItems="flex-start"
                 shrink="0"
+                height="48px"
                 position="relative"
                 padding="0px 0px 0px 0px"
                 {...getOverrideProps(overrides, "Frame 32129767140")}
@@ -938,16 +745,13 @@ export default function SideBar(props) {
                   color="rgba(13,26,38,1)"
                   lineHeight="24px"
                   textAlign="left"
-                  display="block"
+                  display="flex"
                   direction="column"
-                  justifyContent="unset"
+                  justifyContent="flex-start"
                   letterSpacing="0.01px"
-                  width="unset"
-                  height="unset"
-                  gap="unset"
-                  alignItems="unset"
                   shrink="0"
                   alignSelf="stretch"
+                  objectFit="cover"
                   position="relative"
                   padding="0px 0px 0px 0px"
                   whiteSpace="pre-wrap"
@@ -961,15 +765,12 @@ export default function SideBar(props) {
                   color="rgba(13,26,38,1)"
                   lineHeight="24px"
                   textAlign="left"
-                  display="block"
+                  display="flex"
                   direction="column"
-                  justifyContent="unset"
-                  width="unset"
-                  height="unset"
-                  gap="unset"
-                  alignItems="unset"
+                  justifyContent="flex-start"
                   shrink="0"
                   alignSelf="stretch"
+                  objectFit="cover"
                   position="relative"
                   padding="0px 0px 0px 0px"
                   whiteSpace="pre-wrap"
@@ -981,18 +782,14 @@ export default function SideBar(props) {
             <View
               width="24px"
               height="24px"
-              display="block"
-              gap="unset"
-              alignItems="unset"
-              justifyContent="unset"
-              overflow="hidden"
               shrink="0"
+              overflow="hidden"
               position="relative"
               padding="0px 0px 0px 0px"
               {...getOverrideProps(overrides, "Icon/settings")}
             >
               <Icon
-                width="19.45px"
+                width="19.4541015625px"
                 height="20px"
                 viewBox={{ minX: 0, minY: 0, width: 19.4541015625, height: 20 }}
                 paths={[
@@ -1002,10 +799,6 @@ export default function SideBar(props) {
                     fillRule: "nonzero",
                   },
                 ]}
-                display="block"
-                gap="unset"
-                alignItems="unset"
-                justifyContent="unset"
                 position="absolute"
                 top="8.33%"
                 bottom="8.33%"

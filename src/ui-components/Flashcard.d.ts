@@ -4,10 +4,13 @@
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
-import * as React from "react";
+import React from "react";
+import { Card } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type FlashcardProps = React.PropsWithChildren<Partial<FlexProps> & {
+    card?: Card;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
 export default function Flashcard(props: FlashcardProps): React.ReactElement;

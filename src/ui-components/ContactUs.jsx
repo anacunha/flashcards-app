@@ -5,7 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
+import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import {
   Button,
@@ -22,10 +22,6 @@ export default function ContactUs(props) {
     <Flex
       gap="24px"
       direction="column"
-      width="unset"
-      height="unset"
-      justifyContent="flex-start"
-      alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
       {...rest}
@@ -34,12 +30,9 @@ export default function ContactUs(props) {
       <Flex
         gap="8px"
         direction="column"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
-        alignItems="flex-start"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
         position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Frame 31")}
@@ -51,15 +44,12 @@ export default function ContactUs(props) {
           color="rgba(13,26,38,1)"
           lineHeight="25px"
           textAlign="left"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
+          justifyContent="flex-start"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
@@ -73,16 +63,13 @@ export default function ContactUs(props) {
           color="rgba(92,102,112,1)"
           lineHeight="24px"
           textAlign="left"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
+          justifyContent="flex-start"
           letterSpacing="0.01px"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
@@ -95,10 +82,7 @@ export default function ContactUs(props) {
       </Flex>
       <Flex
         gap="16px"
-        direction="row"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
+        width="fit-content"
         alignItems="flex-start"
         shrink="0"
         position="relative"
@@ -112,13 +96,9 @@ export default function ContactUs(props) {
           color="rgba(92,102,112,1)"
           lineHeight="24px"
           textAlign="left"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
+          justifyContent="flex-start"
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -133,13 +113,9 @@ export default function ContactUs(props) {
           color="rgba(92,102,112,1)"
           lineHeight="24px"
           textAlign="left"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
+          justifyContent="flex-start"
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -154,13 +130,9 @@ export default function ContactUs(props) {
           color="rgba(92,102,112,1)"
           lineHeight="24px"
           textAlign="left"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
+          justifyContent="flex-start"
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -170,9 +142,14 @@ export default function ContactUs(props) {
         ></Text>
       </Flex>
       <SelectField
-        width="unset"
+        display="flex"
+        direction="column"
+        justifyContent="center"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
+        position="relative"
+        padding="0px 0px 0px 0px"
         label="Label"
         placeholder="Placeholder"
         size="large"
@@ -182,9 +159,14 @@ export default function ContactUs(props) {
         {...getOverrideProps(overrides, "SelectField29766935")}
       ></SelectField>
       <TextField
-        width="unset"
+        display="flex"
+        direction="column"
+        justifyContent="center"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
+        position="relative"
+        padding="0px 0px 0px 0px"
         label="Label"
         placeholder="Placeholder"
         size="large"
@@ -194,9 +176,14 @@ export default function ContactUs(props) {
         {...getOverrideProps(overrides, "TextField29766936")}
       ></TextField>
       <SelectField
-        width="unset"
+        display="flex"
+        direction="column"
+        justifyContent="center"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
+        position="relative"
+        padding="0px 0px 0px 0px"
         label="Label"
         placeholder="Placeholder"
         size="large"
@@ -206,9 +193,14 @@ export default function ContactUs(props) {
         {...getOverrideProps(overrides, "SelectField29766937")}
       ></SelectField>
       <TextField
-        width="unset"
+        display="flex"
+        direction="column"
+        justifyContent="center"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
+        position="relative"
+        padding="0px 0px 0px 0px"
         label="Label"
         placeholder="Placeholder"
         size="large"
@@ -218,9 +210,14 @@ export default function ContactUs(props) {
         {...getOverrideProps(overrides, "TextField29766938")}
       ></TextField>
       <TextField
-        width="unset"
+        display="flex"
+        direction="column"
+        justifyContent="center"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
+        position="relative"
+        padding="0px 0px 0px 0px"
         label="Label"
         placeholder="Placeholder"
         size="large"
@@ -230,8 +227,14 @@ export default function ContactUs(props) {
         {...getOverrideProps(overrides, "TextField29766939")}
       ></TextField>
       <Button
+        display="flex"
+        gap="0"
+        justifyContent="center"
+        alignItems="center"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
+        position="relative"
         size="large"
         isDisabled={false}
         variation="primary"
@@ -240,10 +243,7 @@ export default function ContactUs(props) {
       ></Button>
       <Flex
         gap="24px"
-        direction="row"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
+        width="fit-content"
         alignItems="flex-start"
         shrink="0"
         position="relative"
@@ -252,12 +252,10 @@ export default function ContactUs(props) {
       >
         <Flex
           gap="8px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
+          width="fit-content"
           alignItems="center"
           shrink="0"
+          height="24px"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Frame 2829766942")}
@@ -265,12 +263,8 @@ export default function ContactUs(props) {
           <View
             width="24px"
             height="24px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            overflow="hidden"
             shrink="0"
+            overflow="hidden"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Icon29766943")}
@@ -286,10 +280,6 @@ export default function ContactUs(props) {
                   fillRule: "nonzero",
                 },
               ]}
-              display="block"
-              gap="unset"
-              alignItems="unset"
-              justifyContent="unset"
               position="absolute"
               top="8.33%"
               bottom="8.33%"
@@ -305,13 +295,9 @@ export default function ContactUs(props) {
             color="rgba(13,26,38,1)"
             lineHeight="24px"
             textAlign="left"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
+            justifyContent="flex-start"
             shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
@@ -322,12 +308,10 @@ export default function ContactUs(props) {
         </Flex>
         <Flex
           gap="8px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
+          width="fit-content"
           alignItems="center"
           shrink="0"
+          height="24px"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Frame 30")}
@@ -335,12 +319,8 @@ export default function ContactUs(props) {
           <View
             width="24px"
             height="24px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            overflow="hidden"
             shrink="0"
+            overflow="hidden"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Icon29766947")}
@@ -356,10 +336,6 @@ export default function ContactUs(props) {
                   fillRule: "nonzero",
                 },
               ]}
-              display="block"
-              gap="unset"
-              alignItems="unset"
-              justifyContent="unset"
               position="absolute"
               top="16.67%"
               bottom="12.5%"
@@ -375,13 +351,9 @@ export default function ContactUs(props) {
             color="rgba(13,26,38,1)"
             lineHeight="24px"
             textAlign="left"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
+            justifyContent="flex-start"
             shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"

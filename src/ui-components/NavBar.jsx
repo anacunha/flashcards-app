@@ -5,17 +5,19 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import React from "react";
+import {
+  getOverrideProps,
+  useAuthSignOutAction,
+} from "@aws-amplify/ui-react/internal";
 import { Button, Flex, Heading, View } from "@aws-amplify/ui-react";
 export default function NavBar(props) {
   const { overrides, ...rest } = props;
+  const signOutButtonOnClick = useAuthSignOutAction({ global: false });
   return (
     <Flex
       gap="20px"
-      direction="row"
       width="1440px"
-      height="unset"
       justifyContent="center"
       alignItems="center"
       position="relative"
@@ -26,9 +28,7 @@ export default function NavBar(props) {
     >
       <Flex
         gap="16px"
-        direction="row"
-        width="unset"
-        height="unset"
+        width="fit-content"
         justifyContent="center"
         alignItems="center"
         shrink="0"
@@ -40,10 +40,6 @@ export default function NavBar(props) {
         <View
           width="27px"
           height="18px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
           shrink="0"
           position="relative"
           border="2px SOLID rgba(174,179,183,1)"
@@ -53,7 +49,13 @@ export default function NavBar(props) {
           {...getOverrideProps(overrides, "Rectangle 1164")}
         ></View>
         <Heading
+          display="flex"
+          gap="0"
+          width="fit-content"
           shrink="0"
+          height="30px"
+          position="relative"
+          padding="0px 0px 0px 0px"
           level="4"
           children="Flashcards"
           {...getOverrideProps(overrides, "Heading")}
@@ -61,20 +63,27 @@ export default function NavBar(props) {
       </Flex>
       <Flex
         gap="32px"
-        direction="row"
-        width="unset"
-        height="unset"
+        width="100%"
         justifyContent="flex-end"
         alignItems="center"
         grow="1"
-        shrink="1"
-        basis="0"
+        height="40px"
         position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Frame 321")}
       >
         <Button
+          display="flex"
+          gap="0"
+          width="fit-content"
+          justifyContent="center"
+          alignItems="center"
           shrink="0"
+          height="42px"
+          position="relative"
+          border="1px SOLID rgba(174,179,183,1)"
+          borderRadius="5px"
+          padding="8px 16px 8px 16px"
           size="default"
           isDisabled={false}
           variation="default"
@@ -82,11 +91,21 @@ export default function NavBar(props) {
           {...getOverrideProps(overrides, "CreateDeckButton")}
         ></Button>
         <Button
+          display="flex"
+          gap="0"
+          width="fit-content"
+          justifyContent="center"
+          alignItems="center"
           shrink="0"
+          height="40px"
+          position="relative"
           size="default"
           isDisabled={false}
           variation="primary"
           children="Sign Out"
+          onClick={() => {
+            signOutButtonOnClick();
+          }}
           {...getOverrideProps(overrides, "SignOutButton")}
         ></Button>
       </Flex>

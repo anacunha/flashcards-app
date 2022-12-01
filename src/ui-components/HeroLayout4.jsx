@@ -5,7 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
+import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Button, Flex, Text, TextField } from "@aws-amplify/ui-react";
 export default function HeroLayout4(props) {
@@ -15,9 +15,7 @@ export default function HeroLayout4(props) {
       gap="10px"
       direction="column"
       width="1440px"
-      height="unset"
       justifyContent="center"
-      alignItems="flex-start"
       overflow="hidden"
       position="relative"
       padding="160px 160px 160px 160px"
@@ -28,12 +26,10 @@ export default function HeroLayout4(props) {
       <Flex
         gap="24px"
         direction="column"
-        width="unset"
-        height="unset"
         justifyContent="center"
-        alignItems="flex-start"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
         position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Type Lock Up")}
@@ -45,15 +41,12 @@ export default function HeroLayout4(props) {
           color="rgba(255,255,255,1)"
           lineHeight="24px"
           textAlign="left"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
+          justifyContent="flex-start"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
@@ -63,19 +56,16 @@ export default function HeroLayout4(props) {
         <Text
           fontFamily="Inter"
           fontSize="24px"
-          fontWeight="600"
+          fontWeight="400"
           color="rgba(255,255,255,1)"
           lineHeight="30px"
           textAlign="left"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
+          justifyContent="flex-start"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
@@ -88,19 +78,16 @@ export default function HeroLayout4(props) {
         <Text
           fontFamily="Inter"
           fontSize="16px"
-          fontWeight="800"
+          fontWeight="400"
           color="rgba(255,255,255,1)"
           lineHeight="20px"
           textAlign="left"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
+          justifyContent="flex-start"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
@@ -112,10 +99,7 @@ export default function HeroLayout4(props) {
         ></Text>
         <Flex
           gap="8px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
+          width="fit-content"
           alignItems="flex-start"
           shrink="0"
           position="relative"
@@ -123,7 +107,14 @@ export default function HeroLayout4(props) {
           {...getOverrideProps(overrides, "Form")}
         >
           <TextField
+            display="flex"
+            gap="8px"
+            direction="column"
+            width="300px"
             shrink="0"
+            height="40px"
+            position="relative"
+            padding="0px 0px 0px 0px"
             placeholder="Placeholder"
             size="default"
             isDisabled={false}
@@ -132,7 +123,14 @@ export default function HeroLayout4(props) {
             {...getOverrideProps(overrides, "TextField")}
           ></TextField>
           <Button
+            display="flex"
+            gap="0"
+            width="fit-content"
+            justifyContent="center"
+            alignItems="center"
             shrink="0"
+            height="40px"
+            position="relative"
             size="default"
             isDisabled={false}
             variation="primary"
@@ -147,14 +145,11 @@ export default function HeroLayout4(props) {
           color="rgba(255,255,255,1)"
           lineHeight="24px"
           textAlign="left"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
+          justifyContent="flex-start"
           letterSpacing="0.01px"
           width="566px"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"

@@ -5,19 +5,28 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import React from "react";
+import {
+  getOverrideProps,
+  useDataStoreCreateAction,
+  useStateMutationAction,
+} from "@aws-amplify/ui-react/internal";
+import { Deck } from "../models";
+import { schema } from "../models/schema";
 import { Button, Flex, Heading, TextField } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function CreateDeck(props) {
   const { overrides, ...rest } = props;
+  const [nameValue, setNameValue] = useStateMutationAction("");
+  const createButtonOnClick = useDataStoreCreateAction({
+    fields: { name: nameValue, cards: "[]" },
+    model: Deck,
+    schema: schema,
+  });
   return (
     <Flex
       gap="16px"
-      direction="row"
       width="720px"
-      height="unset"
-      justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
       border="1px SOLID rgba(174,179,183,1)"
@@ -29,13 +38,11 @@ export default function CreateDeck(props) {
       <Flex
         gap="32px"
         direction="column"
-        width="unset"
+        width="100%"
         height="228px"
         justifyContent="flex-end"
-        alignItems="flex-end"
+        alignItems="stretch"
         grow="1"
-        shrink="1"
-        basis="0"
         position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Form")}
@@ -43,57 +50,71 @@ export default function CreateDeck(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="flex-start"
+          height="150px"
           grow="1"
-          shrink="1"
-          basis="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Fields")}
         >
           <Heading
+            display="flex"
+            gap="0"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
+            position="relative"
+            padding="0px 0px 0px 0px"
             level="4"
             children="Create Deck"
             {...getOverrideProps(overrides, "Title")}
           ></Heading>
           <TextField
-            label="Name"
-            width="unset"
+            display="flex"
+            direction="column"
+            height="104px"
+            justifyContent="center"
             grow="1"
-            shrink="1"
-            basis="0"
             alignSelf="stretch"
+            objectFit="cover"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            label="Name"
             size="large"
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            value={nameValue}
+            onChange={(event) => {
+              setNameValue(event.target.value);
+            }}
             {...getOverrideProps(overrides, "Name")}
           ></TextField>
         </Flex>
         <Button
+          display="flex"
+          gap="0"
+          width="fit-content"
+          justifyContent="center"
+          alignItems="center"
           shrink="0"
+          position="relative"
           size="large"
           isDisabled={false}
           variation="primary"
           children="Create"
+          onClick={() => {
+            createButtonOnClick();
+          }}
           {...getOverrideProps(overrides, "CreateButton")}
         ></Button>
       </Flex>
       <MyIcon
         width="24px"
         height="24px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
-        overflow="hidden"
         shrink="0"
+        overflow="hidden"
         position="relative"
         padding="0px 0px 0px 0px"
         type="close"

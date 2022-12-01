@@ -5,7 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
+import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
@@ -16,8 +16,6 @@ export default function ProfileCard(props) {
       gap="24px"
       direction="column"
       width="320px"
-      height="unset"
-      justifyContent="flex-start"
       alignItems="center"
       position="relative"
       padding="24px 24px 24px 24px"
@@ -28,23 +26,16 @@ export default function ProfileCard(props) {
       <Image
         width="160px"
         height="160px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
         shrink="0"
         position="relative"
         borderRadius="160px"
         padding="0px 0px 0px 0px"
-        objectFit="cover"
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
         gap="8px"
         direction="column"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
+        width="fit-content"
         alignItems="center"
         shrink="0"
         position="relative"
@@ -58,13 +49,9 @@ export default function ProfileCard(props) {
           color="rgba(13,26,38,1)"
           lineHeight="25px"
           textAlign="center"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
+          justifyContent="flex-start"
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -79,14 +66,10 @@ export default function ProfileCard(props) {
           color="rgba(48,64,80,1)"
           lineHeight="24px"
           textAlign="center"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
+          justifyContent="flex-start"
           letterSpacing="0.01px"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -97,10 +80,7 @@ export default function ProfileCard(props) {
       </Flex>
       <Flex
         gap="16px"
-        direction="row"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
+        width="fit-content"
         alignItems="flex-start"
         shrink="0"
         position="relative"
@@ -110,12 +90,8 @@ export default function ProfileCard(props) {
         <MyIcon
           width="24px"
           height="24px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          overflow="hidden"
           shrink="0"
+          overflow="hidden"
           position="relative"
           padding="0px 0px 0px 0px"
           type="group"
@@ -128,14 +104,10 @@ export default function ProfileCard(props) {
           color="rgba(48,64,80,1)"
           lineHeight="24px"
           textAlign="center"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
+          justifyContent="flex-start"
           letterSpacing="0.01px"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -145,8 +117,14 @@ export default function ProfileCard(props) {
         ></Text>
       </Flex>
       <Button
+        display="flex"
+        gap="0"
+        justifyContent="center"
+        alignItems="center"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
+        position="relative"
         size="large"
         isDisabled={false}
         variation="primary"

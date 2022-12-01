@@ -6,8 +6,15 @@
 
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { FlexProps } from "@aws-amplify/ui-react";
-export declare type ProductDetailProps = React.PropsWithChildren<Partial<FlexProps> & {
+import { FlashcardProps } from "./Flashcard";
+import { CollectionProps } from "@aws-amplify/ui-react";
+export declare type FlashcardCollectionProps = React.PropsWithChildren<Partial<CollectionProps<any>> & {
+    items?: any[];
+    overrideItems?: (collectionItem: {
+        item: any;
+        index: number;
+    }) => FlashcardProps;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function ProductDetail(props: ProductDetailProps): React.ReactElement;
+export default function FlashcardCollection(props: FlashcardCollectionProps): React.ReactElement;

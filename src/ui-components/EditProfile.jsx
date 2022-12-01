@@ -5,7 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
+import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import {
   Button,
@@ -24,9 +24,6 @@ export default function EditProfile(props) {
       gap="16px"
       direction="column"
       width="640px"
-      height="unset"
-      justifyContent="flex-start"
-      alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
@@ -36,25 +33,19 @@ export default function EditProfile(props) {
       <Flex
         gap="24px"
         direction="column"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
-        alignItems="flex-start"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
         position="relative"
         padding="24px 24px 24px 24px"
         {...getOverrideProps(overrides, "Content")}
       >
         <Flex
           gap="16px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
           alignItems="center"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Edit Profile29766913")}
@@ -62,12 +53,8 @@ export default function EditProfile(props) {
           <View
             width="24px"
             height="24px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            overflow="hidden"
             shrink="0"
+            overflow="hidden"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Icon")}
@@ -83,10 +70,6 @@ export default function EditProfile(props) {
                   fillRule: "nonzero",
                 },
               ]}
-              display="block"
-              gap="unset"
-              alignItems="unset"
-              justifyContent="unset"
               position="absolute"
               top="20.83%"
               bottom="20.83%"
@@ -102,13 +85,9 @@ export default function EditProfile(props) {
             color="rgba(13,26,38,1)"
             lineHeight="20px"
             textAlign="left"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
+            justifyContent="flex-start"
             shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
@@ -118,22 +97,22 @@ export default function EditProfile(props) {
           ></Text>
         </Flex>
         <Divider
-          width="unset"
+          height="1px"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
+          position="relative"
+          padding="0px 0px 0px 0px"
           size="small"
           orientation="horizontal"
           {...getOverrideProps(overrides, "Divider29766917")}
         ></Divider>
         <Flex
           gap="16px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
           alignItems="center"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Profile")}
@@ -141,15 +120,10 @@ export default function EditProfile(props) {
           <Image
             width="96px"
             height="96px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
             shrink="0"
             position="relative"
             borderRadius="160px"
             padding="0px 0px 0px 0px"
-            objectFit="cover"
             {...getOverrideProps(overrides, "image")}
           ></Image>
           <Text
@@ -159,14 +133,10 @@ export default function EditProfile(props) {
             color="rgba(13,26,38,1)"
             lineHeight="22px"
             textAlign="left"
-            display="block"
+            display="flex"
             direction="column"
-            justifyContent="unset"
+            justifyContent="flex-start"
             textDecoration="underline"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
             shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
@@ -178,22 +148,25 @@ export default function EditProfile(props) {
         <Flex
           gap="16px"
           direction="column"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="flex-start"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Forms")}
         >
           <TextField
-            label="Name"
-            placeholder="John Doe"
-            width="unset"
+            display="flex"
+            gap="8px"
+            direction="column"
+            justifyContent="center"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            label="Name"
+            placeholder="John Doe"
             size="default"
             isDisabled={false}
             labelHidden={false}
@@ -201,11 +174,17 @@ export default function EditProfile(props) {
             {...getOverrideProps(overrides, "TextField29766922")}
           ></TextField>
           <TextField
-            label="Location"
-            placeholder="Seattle, WA"
-            width="unset"
+            display="flex"
+            gap="8px"
+            direction="column"
+            justifyContent="center"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            label="Location"
+            placeholder="Seattle, WA"
             size="default"
             isDisabled={false}
             labelHidden={false}
@@ -213,11 +192,17 @@ export default function EditProfile(props) {
             {...getOverrideProps(overrides, "TextField29766923")}
           ></TextField>
           <TextField
-            label="Email"
-            placeholder="john.doe@awsamplify.com"
-            width="unset"
+            display="flex"
+            gap="8px"
+            direction="column"
+            justifyContent="center"
             shrink="0"
             alignSelf="stretch"
+            objectFit="cover"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            label="Email"
+            placeholder="john.doe@awsamplify.com"
             size="default"
             isDisabled={false}
             labelHidden={false}
@@ -226,15 +211,24 @@ export default function EditProfile(props) {
           ></TextField>
         </Flex>
         <Divider
-          width="unset"
+          height="1px"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
+          position="relative"
+          padding="0px 0px 0px 0px"
           size="small"
           orientation="horizontal"
           {...getOverrideProps(overrides, "Divider29766925")}
         ></Divider>
         <Button
+          display="flex"
+          gap="0"
+          width="fit-content"
+          justifyContent="center"
+          alignItems="center"
           shrink="0"
+          position="relative"
           size="default"
           isDisabled={false}
           variation="primary"

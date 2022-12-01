@@ -5,19 +5,26 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import React from "react";
+import {
+  getOverrideProps,
+  useDataStoreDeleteAction,
+} from "@aws-amplify/ui-react/internal";
+import { Deck } from "../models";
+import { schema } from "../models/schema";
 import { Flex, Heading, Text } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function DeckCard(props) {
-  const { overrides, ...rest } = props;
+  const { deck, overrides, ...rest } = props;
+  const deleteButtonOnClick = useDataStoreDeleteAction({
+    id: deck?.id,
+    model: Deck,
+    schema: schema,
+  });
   return (
     <Flex
       gap="16px"
-      direction="row"
       width="480px"
-      height="unset"
-      justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
       border="1px SOLID rgba(174,179,183,1)"
@@ -30,22 +37,23 @@ export default function DeckCard(props) {
       <Flex
         gap="24px"
         direction="column"
-        width="unset"
-        height="unset"
+        width="100%"
         justifyContent="center"
-        alignItems="flex-start"
         grow="1"
-        shrink="1"
-        basis="0"
         alignSelf="stretch"
         position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Content")}
       >
         <Heading
+          display="flex"
+          gap="0"
+          width="fit-content"
           shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
           level="4"
-          children="Deck Name"
+          children={deck?.name}
           {...getOverrideProps(overrides, "Name")}
         ></Heading>
         <Text
@@ -55,14 +63,10 @@ export default function DeckCard(props) {
           color="rgba(48,64,80,1)"
           lineHeight="24px"
           textAlign="left"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
+          justifyContent="flex-start"
           letterSpacing="0.01px"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -73,9 +77,7 @@ export default function DeckCard(props) {
       </Flex>
       <Flex
         gap="16px"
-        direction="row"
-        width="unset"
-        height="unset"
+        width="fit-content"
         justifyContent="flex-end"
         alignItems="flex-start"
         shrink="0"
@@ -87,12 +89,8 @@ export default function DeckCard(props) {
         <MyIcon
           width="24px"
           height="24px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          overflow="hidden"
           shrink="0"
+          overflow="hidden"
           position="relative"
           padding="0px 0px 0px 0px"
           type="edit"
@@ -101,15 +99,14 @@ export default function DeckCard(props) {
         <MyIcon
           width="24px"
           height="24px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          overflow="hidden"
           shrink="0"
+          overflow="hidden"
           position="relative"
           padding="0px 0px 0px 0px"
           type="delete"
+          onClick={() => {
+            deleteButtonOnClick();
+          }}
           {...getOverrideProps(overrides, "DeleteButton")}
         ></MyIcon>
       </Flex>

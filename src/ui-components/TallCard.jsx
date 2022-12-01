@@ -5,7 +5,7 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
+import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function TallCard(props) {
@@ -15,9 +15,7 @@ export default function TallCard(props) {
       gap="8px"
       direction="column"
       width="320px"
-      height="unset"
       justifyContent="center"
-      alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
@@ -25,28 +23,20 @@ export default function TallCard(props) {
       {...getOverrideProps(overrides, "TallCard")}
     >
       <Image
-        width="unset"
         height="400px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
         position="relative"
         padding="0px 0px 0px 0px"
-        objectFit="cover"
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
         gap="8px"
         direction="column"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
-        alignItems="flex-start"
         shrink="0"
         alignSelf="stretch"
+        objectFit="cover"
         position="relative"
         padding="0px 8px 0px 8px"
         {...getOverrideProps(overrides, "Text Grouping")}
@@ -58,16 +48,13 @@ export default function TallCard(props) {
           color="rgba(13,26,38,1)"
           lineHeight="24px"
           textAlign="left"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
+          justifyContent="flex-start"
           letterSpacing="0.01px"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
@@ -81,15 +68,12 @@ export default function TallCard(props) {
           color="rgba(48,64,80,1)"
           lineHeight="24px"
           textAlign="left"
-          display="block"
+          display="flex"
           direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
+          justifyContent="flex-start"
           shrink="0"
           alignSelf="stretch"
+          objectFit="cover"
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
