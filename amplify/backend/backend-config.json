@@ -1,11 +1,5 @@
 {
   "auth": {},
   "api": {},
-  "predictions": {
-    "speechGenerator827cf55f": {
-      "providerPlugin": "awscloudformation",
-      "service": "Polly",
-      "convertType": "speechGenerator"
-    }
-  }
+  "predictions": {}
 }

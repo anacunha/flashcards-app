@@ -10,11 +10,6 @@
       "StackName": "amplify-flashcards-dev-132319",
       "StackId": "arn:aws:cloudformation:us-west-1:247583747835:stack/amplify-flashcards-dev-132319/511fd5e0-6c14-11ed-a9fc-060b629c7c37",
       "AmplifyAppId": "d1u16pyd2e1lol"
-    },
-    "categories": {
-      "predictions": {
-        "speechGenerator827cf55f": {}
-      }
     }
   }
 }
