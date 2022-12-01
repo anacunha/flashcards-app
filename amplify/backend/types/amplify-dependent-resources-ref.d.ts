@@ -15,5 +15,12 @@ export type AmplifyDependentResourcesAttributes = {
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         }
+    },
+    "predictions": {
+        "speechGenerator709e3769": {
+            "region": "string",
+            "language": "string",
+            "voice": "string"
+        }
     }
 }

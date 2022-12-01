@@ -17,6 +17,9 @@
       },
       "api": {
         "flashcards": {}
+      },
+      "predictions": {
+        "speechGenerator709e3769": {}
       }
     }
   }
