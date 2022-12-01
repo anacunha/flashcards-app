@@ -12,9 +12,6 @@
       "AmplifyAppId": "d1u16pyd2e1lol"
     },
     "categories": {
-      "auth": {
-        "flashcardsad801687": {}
-      },
       "predictions": {
         "speechGenerator827cf55f": {}
       }
