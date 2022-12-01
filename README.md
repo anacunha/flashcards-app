@@ -225,6 +225,7 @@ The token should have the scopes `repo` and `admin:repo_hook`.
 aws secretsmanager create-secret --name github-token --description "Access Token for GitHub" --secret-string "GitHub Access Token" --profile reinvent --region us-west-2
 ```
 
+- https://docs.aws.amazon.com/amplify/latest/userguide/setting-up-GitHub-access.html#setting-up-github-app-cloudformation
 - https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 - https://github.com/cdklabs/cdk-pipelines-github
 - https://constructs.dev/packages/cdk-pipelines-github/v/0.3.1?lang=typescript
