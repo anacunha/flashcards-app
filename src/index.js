@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Amplify } from 'aws-amplify';
-import awsconfig from './aws-exports';
 
 if (process.env.NODE_ENV === 'production') {
   console.log("PROD");
@@ -32,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
     }
   });
 } else {
-  Amplify.configure(awsconfig);
+  // Amplify.configure('./aws-exports');
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
