@@ -10,12 +10,6 @@ export type AmplifyDependentResourcesAttributes = {
             "AppClientID": "string"
         }
     },
-    "api": {
-        "flashcards": {
-            "GraphQLAPIIdOutput": "string",
-            "GraphQLAPIEndpointOutput": "string"
-        }
-    },
     "predictions": {
         "speechGenerator827cf55f": {
             "region": "string",
